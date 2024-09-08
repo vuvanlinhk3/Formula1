@@ -249,126 +249,162 @@ JavaScript hỗ trợ nhiều loại sự kiện để tương tác với ngư�
 - Sử dụng CSS để thay đổi màu nền và kiểu chữ của trang.
 - Thêm một nút vào trang và viết mã JavaScript để hiển thị thông báo khi người dùng nhấp chuột vào nút.
 
+Chắc chắn rồi! Dưới đây là nội dung `README.md` đã được chỉnh sửa để trông rõ ràng và đẹp hơn:
 
-### Hướng Dẫn DEV Dự Án
+```markdown
+# Hướng Dẫn DEV Dự Án
 
-## Git và cách dùng
-Bước 1: Cài đặt git trên PC
-- tải cài đặt git và đăng nhập tài khoản github vào git để sử dụng 
-Bước 2: tải dự án xuống
-- gõ `git clone https://github.com/vuvanlinhk3/Formula1.git` trên terminal hoặc cmd
+## Git và Cách Dùng
 
+### Bước 1: Cài Đặt Git Trên PC
+- Tải và cài đặt Git từ trang web chính thức.
+- Đăng nhập tài khoản GitHub vào Git để sử dụng các tính năng của GitHub.
 
-## Dưới đây là các lệnh Git cơ bản mà bạn có thể sử dụng trong công việc quản lý mã nguồn:
+### Bước 2: Tải Dự Án Xuống
+- Mở Terminal hoặc Command Prompt và gõ:
+  ```bash
+  git clone https://github.com/vuvanlinhk3/Formula1.git
+  ```
 
-# **Lệnh Git Thường Dùng**
+## Các Bước Dùng Git Để Quản Lý Khi Code Xong Đoạn Mã
+
+1. **Thêm Các Thay Đổi Vào Stage**
+   ```bash
+   git add .
+   ```
+
+2. **Commit Các Thay Đổi**
+   ```bash
+   git commit -m "Nội dung mô tả các thay đổi"
+   ```
+
+3. **Đẩy Các Thay Đổi Lên Kho Lưu Trữ Từ Xa**
+   - Đẩy lên nhánh mặc định:
+     ```bash
+     git push
+     ```
+   - Đẩy lên nhánh cụ thể:
+     ```bash
+     git push origin main
+     ```
+     hoặc
+     ```bash
+     git push origin <tên-nhánh>
+     ```
+
+## Các Lệnh Git Cơ Bản
+
+### **Lệnh Git Thường Dùng**
 
 1. **Khởi Tạo Kho Lưu Trữ**
-   - **`git init`**: Khởi tạo một kho lưu trữ Git mới trong thư mục hiện tại.
+   - Khởi tạo một kho lưu trữ Git mới trong thư mục hiện tại.
      ```bash
      git init
      ```
 
 2. **Sao Chép Kho Lưu Trữ Về Máy**
-   - **`git clone <url>`**: Sao chép một kho lưu trữ từ xa về máy tính của bạn.
+   - Sao chép một kho lưu trữ từ xa về máy tính của bạn.
      ```bash
      git clone https://github.com/username/repository.git
      ```
 
 3. **Kiểm Tra Tình Trạng Kho Lưu Trữ**
-   - **`git status`**: Xem trạng thái các tập tin trong kho lưu trữ.
+   - Xem trạng thái các tập tin trong kho lưu trữ.
      ```bash
      git status
      ```
 
-4. **Thêm Tập Tin vào Stage**
-   - **`git add .`**: Thêm tất cả các tập tin thay đổi trong thư mục hiện tại vào stage.
+4. **Thêm Tập Tin Vào Stage**
+   - Thêm tất cả các tập tin thay đổi trong thư mục hiện tại vào stage.
      ```bash
      git add .
      ```
 
 5. **Commit Thay Đổi**
-   - **`git commit -m "message"`**: Lưu các thay đổi trong khu vực stage vào kho lưu trữ với thông điệp mô tả.
+   - Lưu các thay đổi trong khu vực stage vào kho lưu trữ với thông điệp mô tả.
      ```bash
      git commit -m "Add new feature"
      ```
 
 6. **Đẩy Thay Đổi Lên Kho Lưu Trữ Từ Xa**
-   - **`git push origin <branch>`**: Đẩy các thay đổi từ nhánh hiện tại lên kho lưu trữ từ xa.
+   - Đẩy các thay đổi từ nhánh hiện tại lên kho lưu trữ từ xa.
      ```bash
-     git push origin main
+     git push origin <branch>
      ```
 
 7. **Lấy Thay Đổi Từ Kho Lưu Trữ Từ Xa**
-   - **`git pull origin <branch>`**: Lấy các thay đổi từ kho lưu trữ từ xa và hợp nhất chúng vào nhánh hiện tại.
+   - Lấy các thay đổi từ kho lưu trữ từ xa và hợp nhất chúng vào nhánh hiện tại.
      ```bash
-     git pull origin main
+     git pull origin <branch>
      ```
 
 8. **Xem Lịch Sử Commit**
-   - **`git log`**: Xem lịch sử các commit trong kho lưu trữ.
+   - Xem lịch sử các commit trong kho lưu trữ.
      ```bash
      git log
      ```
 
 9. **Tạo và Chuyển Đổi Sang Nhánh Mới**
-   - **`git checkout -b <branch-name>`**: Tạo một nhánh mới và chuyển đổi sang nhánh đó.
+   - Tạo một nhánh mới và chuyển đổi sang nhánh đó.
      ```bash
-     git checkout -b feature-branch
+     git checkout -b <branch-name>
      ```
 
-## **Lệnh Git Ít Dùng**
+### **Lệnh Git Ít Dùng**
 
 1. **Tạo Nhánh Mới**
-   - **`git branch <branch-name>`**: Tạo một nhánh mới.
+   - Tạo một nhánh mới.
      ```bash
-     git branch feature-branch
+     git branch <branch-name>
      ```
 
 2. **Chuyển Đổi Nhánh**
-   - **`git checkout <branch-name>`**: Chuyển đổi sang nhánh khác.
+   - Chuyển đổi sang nhánh khác.
      ```bash
-     git checkout feature-branch
+     git checkout <branch-name>
      ```
 
 3. **Gộp Nhánh**
-   - **`git merge <branch-name>`**: Gộp các thay đổi từ nhánh được chỉ định vào nhánh hiện tại.
+   - Gộp các thay đổi từ nhánh được chỉ định vào nhánh hiện tại.
      ```bash
-     git merge feature-branch
+     git merge <branch-name>
      ```
 
 4. **Xóa Nhánh**
-   - **`git branch -d <branch-name>`**: Xóa một nhánh cục bộ.
+   - Xóa một nhánh cục bộ.
      ```bash
-     git branch -d feature-branch
+     git branch -d <branch-name>
      ```
 
 5. **Xem Các Thay Đổi**
-   - **`git diff`**: Xem sự khác biệt giữa các thay đổi chưa được commit và phiên bản hiện tại.
+   - Xem sự khác biệt giữa các thay đổi chưa được commit và phiên bản hiện tại.
      ```bash
      git diff
      ```
 
 6. **Thay Đổi URL Remote**
-   - **`git remote set-url origin <new-url>`**: Thay đổi URL của kho lưu trữ từ xa.
+   - Thay đổi URL của kho lưu trữ từ xa.
      ```bash
-     git remote set-url origin https://github.com/newusername/newrepository.git
+     git remote set-url origin <new-url>
      ```
 
 7. **Xem Thông Tin Remote**
-   - **`git remote -v`**: Xem các URL của kho lưu trữ từ xa.
+   - Xem các URL của kho lưu trữ từ xa.
      ```bash
      git remote -v
      ```
 
 8. **Xóa Tập Tin Trong Stage**
-   - **`git reset <file>`**: Xóa một tập tin khỏi khu vực stage.
+   - Xóa một tập tin khỏi khu vực stage.
      ```bash
-     git reset file.txt
+     git reset <file>
      ```
 
 9. **Xóa Thay Đổi Cục Bộ**
-   - **`git checkout -- <file>`**: Xóa các thay đổi cục bộ và khôi phục tập tin từ phiên bản cuối cùng đã commit.
+   - Xóa các thay đổi cục bộ và khôi phục tập tin từ phiên bản cuối cùng đã commit.
      ```bash
-     git checkout -- file.txt
+     git checkout -- <file>
      ```
+```
+
+# GOOD LUCK ! <img src="https://cdn.jsdelivr.net/npm/lucide@latest/icons/clover.svg" alt="clover" style="width: 1.2em; vertical-align: middle;"/>
