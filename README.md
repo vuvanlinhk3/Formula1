@@ -402,6 +402,5 @@ JavaScript hỗ trợ nhiều loại sự kiện để tương tác với ngư�
      ```bash
      git checkout -- <file>
      ```
-```
 
-<p style="color: green;">GOOD LUCK! 🌿</p>
+<p style="color: green;">GOOD LUCK! 🍀</p>
