@@ -249,9 +249,6 @@ JavaScript hỗ trợ nhiều loại sự kiện để tương tác với ngư�
 - Sử dụng CSS để thay đổi màu nền và kiểu chữ của trang.
 - Thêm một nút vào trang và viết mã JavaScript để hiển thị thông báo khi người dùng nhấp chuột vào nút.
 
-Chắc chắn rồi! Dưới đây là nội dung `README.md` đã được chỉnh sửa để trông rõ ràng và đẹp hơn:
-
-```markdown
 # Hướng Dẫn DEV Dự Án
 
 ## Git và Cách Dùng
