@@ -249,4 +249,126 @@ JavaScript hỗ trợ nhiều loại sự kiện để tương tác với ngư�
 - Sử dụng CSS để thay đổi màu nền và kiểu chữ của trang.
 - Thêm một nút vào trang và viết mã JavaScript để hiển thị thông báo khi người dùng nhấp chuột vào nút.
 
----
+
+### Hướng Dẫn DEV Dự Án
+
+## Git và cách dùng
+Bước 1: Cài đặt git trên PC
+- tải cài đặt git và đăng nhập tài khoản github vào git để sử dụng 
+Bước 2: tải dự án xuống
+- gõ `git clone https://github.com/vuvanlinhk3/Formula1.git` trên terminal hoặc cmd
+
+
+## Dưới đây là các lệnh Git cơ bản mà bạn có thể sử dụng trong công việc quản lý mã nguồn:
+
+# **Lệnh Git Thường Dùng**
+
+1. **Khởi Tạo Kho Lưu Trữ**
+   - **`git init`**: Khởi tạo một kho lưu trữ Git mới trong thư mục hiện tại.
+     ```bash
+     git init
+     ```
+
+2. **Sao Chép Kho Lưu Trữ Về Máy**
+   - **`git clone <url>`**: Sao chép một kho lưu trữ từ xa về máy tính của bạn.
+     ```bash
+     git clone https://github.com/username/repository.git
+     ```
+
+3. **Kiểm Tra Tình Trạng Kho Lưu Trữ**
+   - **`git status`**: Xem trạng thái các tập tin trong kho lưu trữ.
+     ```bash
+     git status
+     ```
+
+4. **Thêm Tập Tin vào Stage**
+   - **`git add .`**: Thêm tất cả các tập tin thay đổi trong thư mục hiện tại vào stage.
+     ```bash
+     git add .
+     ```
+
+5. **Commit Thay Đổi**
+   - **`git commit -m "message"`**: Lưu các thay đổi trong khu vực stage vào kho lưu trữ với thông điệp mô tả.
+     ```bash
+     git commit -m "Add new feature"
+     ```
+
+6. **Đẩy Thay Đổi Lên Kho Lưu Trữ Từ Xa**
+   - **`git push origin <branch>`**: Đẩy các thay đổi từ nhánh hiện tại lên kho lưu trữ từ xa.
+     ```bash
+     git push origin main
+     ```
+
+7. **Lấy Thay Đổi Từ Kho Lưu Trữ Từ Xa**
+   - **`git pull origin <branch>`**: Lấy các thay đổi từ kho lưu trữ từ xa và hợp nhất chúng vào nhánh hiện tại.
+     ```bash
+     git pull origin main
+     ```
+
+8. **Xem Lịch Sử Commit**
+   - **`git log`**: Xem lịch sử các commit trong kho lưu trữ.
+     ```bash
+     git log
+     ```
+
+9. **Tạo và Chuyển Đổi Sang Nhánh Mới**
+   - **`git checkout -b <branch-name>`**: Tạo một nhánh mới và chuyển đổi sang nhánh đó.
+     ```bash
+     git checkout -b feature-branch
+     ```
+
+## **Lệnh Git Ít Dùng**
+
+1. **Tạo Nhánh Mới**
+   - **`git branch <branch-name>`**: Tạo một nhánh mới.
+     ```bash
+     git branch feature-branch
+     ```
+
+2. **Chuyển Đổi Nhánh**
+   - **`git checkout <branch-name>`**: Chuyển đổi sang nhánh khác.
+     ```bash
+     git checkout feature-branch
+     ```
+
+3. **Gộp Nhánh**
+   - **`git merge <branch-name>`**: Gộp các thay đổi từ nhánh được chỉ định vào nhánh hiện tại.
+     ```bash
+     git merge feature-branch
+     ```
+
+4. **Xóa Nhánh**
+   - **`git branch -d <branch-name>`**: Xóa một nhánh cục bộ.
+     ```bash
+     git branch -d feature-branch
+     ```
+
+5. **Xem Các Thay Đổi**
+   - **`git diff`**: Xem sự khác biệt giữa các thay đổi chưa được commit và phiên bản hiện tại.
+     ```bash
+     git diff
+     ```
+
+6. **Thay Đổi URL Remote**
+   - **`git remote set-url origin <new-url>`**: Thay đổi URL của kho lưu trữ từ xa.
+     ```bash
+     git remote set-url origin https://github.com/newusername/newrepository.git
+     ```
+
+7. **Xem Thông Tin Remote**
+   - **`git remote -v`**: Xem các URL của kho lưu trữ từ xa.
+     ```bash
+     git remote -v
+     ```
+
+8. **Xóa Tập Tin Trong Stage**
+   - **`git reset <file>`**: Xóa một tập tin khỏi khu vực stage.
+     ```bash
+     git reset file.txt
+     ```
+
+9. **Xóa Thay Đổi Cục Bộ**
+   - **`git checkout -- <file>`**: Xóa các thay đổi cục bộ và khôi phục tập tin từ phiên bản cuối cùng đã commit.
+     ```bash
+     git checkout -- file.txt
+     ```
