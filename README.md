@@ -404,4 +404,4 @@ JavaScript hỗ trợ nhiều loại sự kiện để tương tác với ngư�
      ```
 ```
 
-# GOOD LUCK ! <img src="https://cdn.jsdelivr.net/npm/lucide@latest/icons/clover.svg" alt="clover" style="width: 1.2em; vertical-align: middle;"/>
+<p style="color: green;">GOOD LUCK! 🌿</p>
