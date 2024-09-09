@@ -1,18 +1,18 @@
 const express = require('express');
-const path = require('path');
+const cors = require('cors');
+const bodyParser = require('body-parser');
+const routes = require('routes.js');
 
 const app = express();
-const PORT = 3000;
+const port = 3000;
 
-// Serve static files from frontend
-app.use(express.static(path.join(__dirname, '../frontend')));
+// Sử dụng CORS và body-parser
+app.use(cors());
+app.use(bodyParser.json());
 
-// Define a simple API endpoint
-app.get('/api/team', (req, res) => {
-  res.json({ teamName: "Racing Team", members: ["John", "Jane", "Doe"] });
-});
+// Sử dụng routes
+app.use('/', routes);
 
-// Start the server
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+app.listen(port, () => {
+  console.log(`Backend is running on http://localhost:${port}`);
 });
