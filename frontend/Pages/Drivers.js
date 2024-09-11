@@ -1,7 +1,7 @@
 import { renderHeader } from '../components/Header.js';
 import { renderFooter } from '../components/Footer.js';
 
-export function renderAboutPage(root) {
+export function renderDriversPage(root) {
   renderHeader(root);
 
   const aboutContent = document.createElement('div');
