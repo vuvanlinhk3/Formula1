@@ -1,0 +1,62 @@
+:root {
+    /* Màu sắc */
+    --primary-color: rgba(255, 69, 0, 1); /* Cam đỏ hơi nhạt */
+    --button-primary-color: rgba(255, 69, 0, 1); /* Màu nút cam đỏ hơi nhạt */
+    --button-black-color: #000000; /* Màu nút đen */
+    --text-white: #ffffff; /* Màu chữ trắng */
+    --text-description: rgba(255, 255, 255, 0.8); /* Màu chữ hơi trắng */
+
+    /* Kích thước màn hình */
+    --main-width: 1200px; /* Chiều rộng màn hình chính */
+
+    /* Font chữ và kích thước chữ */
+    --base-font-size: 62.5%; /* 1.5rem sẽ bằng 15px (10px = 1rem), nên 62.5% = 10px */
+
+    /* Font chữ giống với trang web Formula 1 */
+    --font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Bạn có thể thay đổi font chữ nếu cần */
+}
+
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Đảm bảo padding và border không làm thay đổi kích thước của phần tử */
+}
+
+html, body {
+    height: 100%;
+    font-size: var(--base-font-size); /* Thiết lập lại kích thước font chữ */
+    font-family: var(--font-family); /* Thiết lập font chữ mặc định */
+}
+
+body {
+    line-height: 1.5; /* Đặt chiều cao dòng hợp lý */
+    background-color: var(--background-color-main); /* Áp dụng màu nền chủ đạo */
+    color: var(--text-white); /* Thiết lập màu chữ trắng */
+}
+
+ul, ol {
+    list-style: none; /* Xóa bỏ ký hiệu mặc định của danh sách */
+}
+
+a {
+    text-decoration: none; /* Xóa bỏ gạch chân mặc định của các thẻ a */
+    color: inherit; /* Đặt màu chữ giống với phần tử cha */
+}
+
+img {
+    max-width: 100%; /* Đảm bảo ảnh không bị vượt quá kích thước của phần tử chứa */
+    height: auto;
+}
+
+button {
+    border: none; /* Xóa bỏ border mặc định của button */
+    background: none; /* Xóa bỏ màu nền mặc định */
+    cursor: pointer; /* Con trỏ dạng tay khi hover vào button */
+}
+
+/* Tùy chỉnh thêm nếu cần */
+input, textarea {
+    outline: none; /* Xóa bỏ viền outline khi focus */
+    border: none; /* Xóa bỏ viền mặc định */
+}
