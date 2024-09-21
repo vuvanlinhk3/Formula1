@@ -1,0 +1,36 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--primary-color); /* Màu nền navbar */
+}
+
+.logo img {
+    height: 50px; /* Chiều cao logo */
+}
+
+.nav-items {
+    flex: 7; /* Chiếm 7 phần chiều ngang */
+}
+
+.nav-items ul {
+    display: flex;
+    list-style-type: none; /* Bỏ dấu chấm */
+    padding: 0;
+    margin: 0;
+}
+
+.nav-items li {
+    margin-left: 20px; /* Khoảng cách giữa các mục */
+}
+
+.nav-items a {
+    color: white; /* Màu chữ */
+    text-decoration: none; /* Bỏ gạch chân */
+    font-size: 1.6rem; /* Kích thước chữ */
+}
+
+.nav-items a:hover {
+    
+}
