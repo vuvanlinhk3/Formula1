@@ -4,7 +4,7 @@ import { renderNavBar } from '../components/NavBar.js';
 
 export function renderHomePage(root) {
   renderHeader(root);
-  renderNavBar(root)
+  renderNavBar(root);
   const homeContent = document.createElement('div');
   homeContent.innerHTML = `
     <h1>Welcome to the Home Page</h1>
