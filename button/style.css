@@ -1,0 +1,44 @@
+:root {
+    --btn-width: 110px;
+    --btn-height: 40px;
+    --btn-font-size: 16px;
+    --btn-border-radius: 8px;
+    --btn-color: white;
+}
+
+/* Lớp cơ bản cho tất cả các nút */
+button {
+    width: var(--btn-width);
+    height: var(--btn-height);
+    font-size: var(--btn-font-size);
+    color: var(--btn-color);
+    border: none;
+    border-radius: var(--btn-border-radius);
+    cursor: pointer;
+    margin: 2px;
+    transition: background-color 0.3s ease;
+}
+
+/* Định nghĩa kiểu riêng cho nút Sign In */
+.signin {
+    background-color: #343f4a; /* Màu đen cho Sign In */
+}
+
+.signin:hover {
+    background-color: #16171a; /* Màu xanh đậm hơn khi hover */
+}
+
+/* Định nghĩa kiểu riêng cho nút Sign Up */
+.signup {
+    background-color: #ff5722; /* Màu cam cho Sign Up */
+}
+
+.signup:hover {
+    background-color: #d84315; /* Màu cam đậm hơn khi hover */
+}
+
+/* Điều chỉnh icon trong các nút */
+.icon {
+    font-size: 14px; /* Kích thước icon */
+    margin-right: 3.5px; /* Khoảng cách giữa icon và chữ */
+}
