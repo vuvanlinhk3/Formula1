@@ -1,50 +1,72 @@
+/* General styles for the header */
+.headermain {
+  width: 100%; /* Đặt chiều rộng thành 100% */
+ /* Giới hạn chiều rộng tối đa */
+ box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Đổ bóng để tạo hiệu ứng nổi */
+  display: flex;
+  background-color: #f1f1f1; 
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  flex: 1; /* Chiếm không gian còn lại */
+  margin: 0 auto; /* Để căn giữa theo chiều dọc nếu cần */
+}
+
 .headerCSS {
+  width: 100%;
+  max-width: var(--main-width);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.05rem 2.3rem;
-  background-color: #dfdddd;
+  padding: 1rem 3rem;
+/* Màu nền nhẹ hơn */
 }
 
+/* Logo styles */
 .logoFia {
-  height: 0.5rem;
-  opacity: 0.5;
+  height: 3rem;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
   cursor: pointer;
 }
 
-.header-buttons {
-  display: flex;
+.logoFia:hover {
+  opacity: 1;
 }
 
+/* Button container */
+.header-buttons {
+  display: flex;
+  gap: 1rem; /* Khoảng cách giữa các nút */
+}
+
+/* Sign In Button */
 .signInBtn, .subscribeBtn {
   border: none;
-  padding: 0.17rem 0.25rem;
-  margin-left: 0.1rem; 
-  cursor: pointer; 
-  border-radius: 0.1rem;
-  color: var(--text-white);
-  font-size: 0.27rem;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  font-size: 1rem;
   font-weight: 600;
+  transition: all 0.3s ease;
 }
 
 .signInBtn {
-  background-color: var(--button-black-color);
-  transition: 0.3s;
+  background-color: #333; /* Nền đen */
+  color: #fff; /* Chữ trắng */
 }
 
 .signInBtn:hover {
-  opacity: 0.7;
+  background-color: #555; /* Hiệu ứng hover nhẹ nhàng */
 }
 
+/* Subscribe Button */
 .subscribeBtn {
-  border: 0.05rem solid transparent; /* Giữ border để không ảnh hưởng chiều dọc thẻ headerCSS khi hover*/
-  background-color: var(--button-primary-color);
-  transition: 0.3s;
+  background-color: #ff6347; /* Màu cam đậm */
+  color: #fff; /* Chữ trắng */
+  border: 2px solid transparent; /* Đảm bảo không thay đổi kích thước khi hover */
 }
 
 .subscribeBtn:hover {
-  background-color: var(--text-white);
-  color: #000;
-  border: 0.05rem solid var(--button-primary-color);
+  background-color: #fff;
+  color: #ff6347; /* Màu chữ đổi thành màu cam khi hover */
+  border: 2px solid #ff6347;
 }
-

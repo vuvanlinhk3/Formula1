@@ -1,7 +1,8 @@
 export function renderHeader(root) {
     const header = document.createElement('header');
     header.innerHTML = `
-      <div class="headerCSS">
+      <Header class= "headermain">
+        <div class="headerCSS">
         <a href="https://www.fia.com/" target="_blank">
           <img class="logoFia" src="imgs/fia_logo.png" alt="FIA Logo"/>
         </a>
@@ -14,6 +15,7 @@ export function renderHeader(root) {
           </button>
         </div>
       </div>
+      </Header>
     `;
     root.appendChild(header);
   
