@@ -7,7 +7,7 @@ export function renderHeader(root) {
             <img class="logoFia" src="imgs/fia_logo.png" alt="FIA Logo"/>
           </a>
           <div class="header-buttons">
-            <div>
+            <div class= "logomain">
               <a href="#" target="_blank">
                 <img class="logof1" src="/frontend/imgs/f1-tv-logo.png" alt="FIA Logo"/>
               </a>

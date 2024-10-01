@@ -34,7 +34,7 @@ export function renderHomePage(root) {
             <div class="date">18 OCT - 20 OCT 2024</div>
             <button class="view-schedule">VIEW SCHEDULE</button>
             <div class="time-info">
-                <div>Austin 09:01</div>
+                <div class="outtime">Austin 09:01</div>
                 <div>Your time 21:01</div>
             </div>
         </div>
@@ -64,6 +64,73 @@ export function renderHomePage(root) {
             <div class="month">DEC</div>
         </div>
     </div>
+
+
+<!--Standing driver  -->
+
+    <div class="driver-standings">
+        <div class="back-standing">
+            <span>Driver Standings</span>
+        </div>
+        <div class="standing-container">
+            <div class="top-standing">
+
+                <div class="top-driver">
+                    <div class="T-driver">
+                        <img class = "driver-img" src="/frontend/DriverImg/qmvhe81a.png" alt="Driver">
+                    </div>
+                    <div class="infor-diver">
+                        <img src="/frontend/imgs/co.png" alt="quocky">
+                        <div class="name-driver">
+                            <p>Max Verstappen</p>
+                        </div>
+                        
+                    </div>
+                    <div class ="number-driver">2</div>
+                </div>
+
+                <div class="top-driver">
+                    <div class="T-driver">
+                        <img class = "driver-img" src="/frontend/DriverImg/qmvhe81a.png" alt="Driver">
+                    </div>
+                    <div class="infor-diver">
+                        <img src="/frontend/imgs/co.png" alt="quocky">
+                        <div class="name-driver">
+                            <p>Max Verstappen</p>
+                        </div>
+                        
+                    </div>
+                    <div class ="number-driver">1</div>
+                </div>
+
+                <div class="top-driver">
+                    <div class="T-driver">
+                        <img class = "driver-img" src="/frontend/DriverImg/qmvhe81a.png" alt="Driver">
+                    </div>
+                    <div class="infor-diver">
+                        <img src="/frontend/imgs/co.png" alt="quocky">
+                        <div class="name-driver">
+                            <p>Max Verstappen</p>
+                        </div>
+                        
+                    </div>
+                    <div class ="number-driver">3</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- danh sách driver-->
+    <div class = "top-list">
+        <div class = "top-item">
+            <span>1</span>
+        </div>
+    </div>
+
+
+
+
   `;
   root.appendChild(homeContent);
 

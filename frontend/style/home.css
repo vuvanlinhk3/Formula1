@@ -1,10 +1,3 @@
-body {
-    background-color: #1e1e1e;
-    color: white;
-    font-family: Arial, sans-serif;
-    margin: 0;
-}
-
 .container {
     display: flex;
     flex-wrap: nowrap; /* Ngăn không cho phần tử con xuống hàng */
@@ -20,11 +13,17 @@ body {
 .event-card {
     background-color: #2c2c2c;
     border-radius: 10px;
-    margin: 10px;
+    margin: 5px;
     padding: 20px;
     text-align: center;
     width: 150px;
-    flex: 0 0 auto; /* Đảm bảo mỗi thẻ có chiều rộng cố định và không co dãn */
+
+    /* Flexbox để căn giữa nội dung */
+    display: flex;
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center;     /* Căn giữa theo chiều dọc */
+    flex-direction: column;  /* Sắp xếp nội dung theo chiều dọc */
+    flex: 0 0 auto;          /* Ngăn việc co giãn của các thẻ */
 }
 
 .flag {
@@ -33,8 +32,9 @@ body {
 }
 
 .date {
-    font-size: 2rem;
+    font-size: 1.2rem;
     font-weight: bold;
+    color: var(--text-description);
 }
 
 .month {
@@ -43,11 +43,15 @@ body {
 
 .highlight {
     background-color: #4c4c4c;
+    width: 300px;
 }
 
 h2 {
-    font-size: 1rem;
+    font-size: 1.5rem;
     margin: 10px 0;
+}
+.outtime{
+    color: var(--text-description);
 }
 
 .view-schedule {
@@ -56,11 +60,113 @@ h2 {
     border-radius: 5px;
     color: white;
     cursor: pointer;
-    padding: 5px 10px;
+    padding: 10px 15px;
     margin: 10px 0;
 }
 
 .time-info {
-    font-size: 0.9rem;
+    font-size: 1.6rem;
     margin-top: 10px;
+}
+.event-card img{
+    border-radius: 3px;
+}
+
+
+/* driver standing */
+
+.driver-standings {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.back-standing {
+    background-image: linear-gradient(to right, 
+    rgba(0, 0, 0, 0.8) 0%,   /* Bắt đầu từ màu tối */
+    rgba(0, 0, 0, 0.8) calc(50% - 400px),  /* Tối dần đến vị trí bắt đầu khoảng giữa */
+    rgb(185, 185, 185) 50%,  /* Vùng sáng khoảng giữa (khoảng 800px từ trung tâm) */
+    rgba(0, 0, 0, 0.8) calc(50% + 400px), /* Kết thúc vùng sáng và bắt đầu tối dần */
+    rgba(0, 0, 0, 0.8) 100%  /* Kết thúc ở màu tối */
+);
+
+    height: 300px;
+    width: 100%;
+    /* filter: blur(5px) brightness(0.5); */
+}
+
+
+
+.top-standing {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: -200px;
+}
+
+.top-driver {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    color: white;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    overflow: hidden;
+    margin: 20px;
+    position: relative;
+    background-color: white;
+}
+
+
+.T-driver{
+    width: 300px;
+    height: auto;
+    border-bottom: 10px solid var(--primary-color);
+    position: relative;
+}
+.driver-img{
+    position: relative;
+    top: 12px;
+}
+.infor-diver {
+    background-color: var(--border-black);
+    width: 100%;
+    padding: 10px 15px;
+}
+
+.name-driver p {
+    font-size: 2rem;
+    margin: 0;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-white);
+}
+
+.infor-diver img {
+    width: 35px;
+    height: auto;
+    margin-top: 10px;
+    border: 1px solid #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+.number-driver{
+    font-size: 5.2rem;
+    color: var(--primary-color);
+    font-family: sans-serif;
+    font-weight: 600;
+    position: absolute;
+    left: 15px;
+    top: 5px;
+}
+.top-driver:first-child , .top-driver:nth-child(3){
+    top: 30px;
+}
+.back-standing span {
+    
 }
