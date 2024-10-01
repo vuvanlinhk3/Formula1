@@ -19,15 +19,6 @@ button {
     transition: background-color 0.3s ease;
 }
 
-/* Định nghĩa kiểu riêng cho nút Sign In */
-.signin {
-    background-color: #343f4a; /* Màu đen cho Sign In */
-}
-
-.signin:hover {
-    background-color: #16171a; /* Màu xanh đậm hơn khi hover */
-}
-
 /* Định nghĩa kiểu riêng cho nút Sign Up */
 .signup {
     background-color: #ff5722; /* Màu cam cho Sign Up */
