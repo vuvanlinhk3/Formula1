@@ -319,7 +319,10 @@ h2 {
 
 
 
-
+.cangiua{
+    display: flex;
+    justify-content: center;
+}
 .border-big{
     border-right: 10px solid #3f2875;
     border-top: 10px solid #3f2875;

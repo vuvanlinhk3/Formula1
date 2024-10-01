@@ -10,16 +10,16 @@ export function renderFooter(root) {
             <a href="https://apps.apple.com/gb/app/formula-1/id835022598"><img src="/frontend/FooterImages/app-store.png" alt="App Store"></a>
         </div>
         <div class="social-media">
-            <a href="https://www.facebook.com/Formula1"><img src="/frontend/FooterImages/facebook.png" alt="Facebook"></a>
-            <a href="https://www.twitter.com/f1"><img src="/frontend/FooterImages/x.png" alt="X"></a>
-            <a href="https://www.instagram.com/f1"><img src="/frontend/FooterImages/instagram.png" alt="Instagram"></a>
-            <a href="https://www.youtube.com/f1"><img src="/frontend/FooterImages/youtube.png" alt="YouTube"></a>
+            <a href="https://www.facebook.com/Formula1"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.twitter.com/f1"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.instagram.com/f1"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.youtube.com/f1"><i class="fa-brands fa-youtube"></i></a>
         </div>
     </div>
     </div>
 
     <!-- Row 2: Our Partners -->
-    <div class="partners-title">
+    <div class="partners-title passion-one-bold">
         <p>Our Partners</p>
     </div>
 

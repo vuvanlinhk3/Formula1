@@ -11,6 +11,7 @@
     background-color: black;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 10px 0;
     max-width: 1200px;
     margin: 0 auto;
@@ -20,9 +21,30 @@
     height: 40px;
     margin-right: 15px;
 } 
-.social-media a img {
-    height: 25px;
-    margin-right: 15px;
+.social-media{
+    display: flex;
+}
+.social-media a {
+    border: 1px solid #9e9e9e59;
+    width: 30px; /* Chiều rộng */
+    height: 30px; /* Chiều cao */
+    display: flex; /* Sử dụng flexbox để căn giữa */
+    justify-content: center; 
+    align-items: center; 
+    flex-wrap: nowrap;
+    border-radius: 3px;
+    margin: 0 5px;
+    background-color: #c5c4c400;
+    transition: all .2s linear;
+}
+.social-media a:hover{
+    border: 1px solid #9e9e9e;
+    color: var(--text-white);
+    background-color:#94949473 ;
+}
+.social-media a i {
+    /* margin-right: 20px; */
+    font-size: 2rem;
 }
 
 .partners-title {
@@ -31,7 +53,8 @@
 }
 
 .partners-title p {
-    font-size: 24px;
+    font-size: 3rem;
+    font-style: italic;
     font-weight: bold;
 }
 
