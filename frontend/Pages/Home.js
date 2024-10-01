@@ -8,6 +8,11 @@ export function renderHomePage(root) {
   homeContent.innerHTML = `
     <h1>Welcome to the Home Page</h1>
     <button id="goToAbout">Go to About Page</button>
+    <!-- Nút Sign In -->
+    <button class="signin"> <i class="fa-solid fa-user icon"></i> Sign In </button>
+
+    <!-- Nút Sign Up -->
+    <button class="signup"> <i class="fa-solid fa-user-plus icon"></i> Sign Up </button>
   `;
   root.appendChild(homeContent);
 

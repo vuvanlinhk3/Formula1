@@ -4,7 +4,7 @@ export function renderSignIn(root) {
 
     // Thêm nút Sign In vào phần tử
     signInButton.innerHTML = `
-        <button class="signin">
+      <button class="signin">
             <i class="fa-solid fa-user icon"></i> Sign In
         </button>
     `;
