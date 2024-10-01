@@ -28,6 +28,7 @@ html, body {
     height: 100%;
     font-size: var(--base-font-size); /* Thiết lập lại kích thước font chữ */
     font-family: var(--font-family); /* Thiết lập font chữ mặc định */
+    /* background-color: #000000; */
 }
 
 body {

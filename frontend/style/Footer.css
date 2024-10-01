@@ -1,21 +1,68 @@
-.site-footer {
-    background-color: #0019;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
+.row1 {
+    background-color: #000000;
 }
 
-.footer-container {
+.site-footer {
+    background-color: rgb(1, 1, 24);
+    color: #ffffff;
+}
+
+.footer-top {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
     max-width: 1200px;
     margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
 }
 
-.footer-logo img {
-    height: 60px;
+.app-download a img {
+    height: 40px;
+    margin-right: 15px;
+} 
+.social-media a img {
+    height: 25px;
+    margin-right: 15px;
+}
+
+.partners-title {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.partners-title p {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.partner-logos {
+    display: flex;
+    flex-wrap: wrap; /* Cho phép các logo xuống dòng nếu không đủ chỗ */
+    gap: 15px;
+    max-width: 1200px;
+    margin: 0 auto; /* Căn giữa toàn bộ khối chứa logo */
+    justify-content: center; /* Căn giữa các logo bên trong flex container */
+    align-items: center; /* Căn giữa theo chiều dọc nếu cần */
+    padding: 15px 0;
+    border-top: 1px solid #ffffff;
+
+}
+
+.partner-logos div {
+    display: flex;
+    justify-content: center; /* Căn giữa logo trong từng ô */
+    align-items: center; /* Căn giữa logo trong từng ô */
+}
+
+.partner-logos img {
+    max-height: 50px; /* Đặt kích thước tối đa cho logo để đảm bảo đồng nhất */
+    object-fit: contain;
+}
+
+
+.footer-links {
+    margin-top: 20px;
+    text-align: center;
 }
 
 .footer-links ul {
@@ -24,21 +71,31 @@
 }
 
 .footer-links ul li {
-    display: inline;
-    margin-right: 20px;
+    display: inline-block;
+    margin: 0 15px;
 }
 
 .footer-links ul li a {
     color: #fff;
     text-decoration: none;
-}
-
-.footer-social a img {
-    height: 30px;
-    margin-right: 10px;
+    font-size: 14px;
 }
 
 .footer-bottom {
-    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-top: 1px solid;
+}
+
+.footer-logo img {
+    height: 20px;
+}
+
+.copyright {
     font-size: 14px;
+    color: #ffffff;
 }
