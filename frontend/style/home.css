@@ -1,0 +1,60 @@
+body {
+    background-color: #1e1e1e;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.event-card {
+    background-color: #2c2c2c;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 150px;
+}
+
+.flag {
+    width: 50px;
+    height: auto;
+}
+
+.date {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.month {
+    font-size: 1rem;
+}
+
+.highlight {
+    background-color: #4c4c4c;
+}
+
+h2 {
+    font-size: 1rem;
+    margin: 10px 0;
+}
+
+.view-schedule {
+    background-color: #00aaff;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    padding: 5px 10px;
+    margin: 10px 0;
+}
+
+.time-info {
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
