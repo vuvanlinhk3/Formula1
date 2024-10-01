@@ -1,20 +1,30 @@
 export function renderHeader(root) {
     const header = document.createElement('header');
     header.innerHTML = `
-      <nav>
-        <a href="#" id="navHome">Home</a>
-        <a href="#" id="navAbout">About</a>
-        <a href="#" id="navContact">Contact</a>
-      </nav>
+      <Header class= "headermain">
+        <div class="headerCSS">
+        <a href="https://www.fia.com/" target="_blank">
+          <img class="logoFia" src="imgs/fia_logo.png" alt="FIA Logo"/>
+        </a>
+        <div class="header-buttons">
+          <button class="signInBtn">
+            Sign In
+          </button>
+          <button class="subscribeBtn">
+            Subscribe
+          </button>
+        </div>
+      </div>
+      </Header>
     `;
     root.appendChild(header);
   
-    // Sự kiện điều hướng qua các link trong header
-    document.getElementById('navHome').addEventListener('click', function () {
-      navigateTo('home');
-    });
-    document.getElementById('navAbout').addEventListener('click', function () {
-      navigateTo('about');
-    });
+    // // Sự kiện điều hướng qua các link trong header
+    // document.getElementById('navHome').addEventListener('click', function () {
+    //   navigateTo('home');
+    // });
+    // document.getElementById('navAbout').addEventListener('click', function () {
+    //   navigateTo('about');
+    // });
   }
   
