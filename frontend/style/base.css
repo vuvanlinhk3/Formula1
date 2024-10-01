@@ -16,7 +16,23 @@
     /* Font chữ giống với trang web Formula 1 */
     --font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Bạn có thể thay đổi font chữ nếu cần */
 }
-
+.passion-one-regular {
+    font-family: "Passion One", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+  }
+  
+  .passion-one-bold {
+    font-family: "Passion One", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .passion-one-black {
+    font-family: "Passion One", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+  }
 /* CSS Reset */
 * {
     margin: 0;

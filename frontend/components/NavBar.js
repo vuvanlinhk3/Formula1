@@ -4,9 +4,11 @@ export function renderNavBar(root) {
         <nav class="navbar">
             <div class = "navmain">
                 <div class="logo">
-                    <img src="/frontend/Assets/logo/f1_logo.png" alt="Logo">
+                    <a href = "#home" >
+                        <img src="/frontend/Assets/logo/f1_logo.png" alt="Logo">
+                    </a>
                 </div>
-                <div class="nav-items">
+                <div class="nav-items passion-one-regular">
                     <ul>
                         <li><a href="#schedule">Schedule</a></li>
                         <li><a href="#result">Result</a></li>
