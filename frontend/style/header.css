@@ -70,3 +70,12 @@
   color: #ff6347; /* Màu chữ đổi thành màu cam khi hover */
   border: 2px solid #ff6347;
 }
+.logomain{
+  display: flex;
+    align-items: center;
+    border-right: 1px solid #ddd;
+    padding-right: 1rem;
+}
+.logof1{
+  max-width: 75%;
+}

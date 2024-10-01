@@ -7,9 +7,14 @@ body {
 
 .container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-wrap: nowrap; /* Ngăn không cho phần tử con xuống hàng */
+    justify-content: flex-start; /* Căn các phần tử từ đầu */
     padding: 20px;
+    scroll-behavior: smooth;
+    overflow-x: auto; /* Cho phép cuộn theo chiều ngang */
+    overflow-y: hidden; /* Tắt cuộn dọc */
+    -ms-overflow-style: none;  /* Ẩn thanh cuộn cho Internet Explorer và Edge */
+    scrollbar-width: none;  /* Ẩn thanh cuộn cho Firefox */
 }
 
 .event-card {
@@ -19,6 +24,7 @@ body {
     padding: 20px;
     text-align: center;
     width: 150px;
+    flex: 0 0 auto; /* Đảm bảo mỗi thẻ có chiều rộng cố định và không co dãn */
 }
 
 .flag {

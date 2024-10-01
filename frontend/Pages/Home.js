@@ -23,8 +23,8 @@ export function renderHomePage(root) {
             <div class="date">15</div>
             <div class="month">SEP</div>
         </div>
-        <div class="/frontend/imgs/co.png">
-            <img src="singapore.png" alt="Singapore" class="flag">
+        <div class="event-card">
+            <img src="/frontend/imgs/co.png" alt="Singapore" class="flag">
             <div class="date">22</div>
             <div class="month">SEP</div>
         </div>

@@ -1,12 +1,12 @@
 export function renderFooter(root) {
     const footer = document.createElement('footer');
     footer.innerHTML = `
-      <footer style="background-color: #000; color: #fff; padding: 20px 0; text-align: center;">
+      <footer style="background-color: #0019; color: #fff; padding: 20px 0; text-align: center;">
     <div class="footer-container" style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
         <!-- Logo Section -->
         <div class="footer-logo" style="flex: 1;">
-            <a href="/" style="text-decoration: none; color: #fff;">
-                <img src="logo.png" alt="F1 Logo" style="height: 60px;">
+            <a href="#" style="text-decoration: none; color: #fff;">
+                <img src="/frontend/FooterImages/f1_logo.png" alt="F1 Logo" style="height: 60px;">
             </a>
         </div>
 
@@ -22,10 +22,10 @@ export function renderFooter(root) {
 
         <!-- Social Media Section -->
         <div class="footer-social" style="flex: 1; text-align: right;">
-            <a href="https://www.facebook.com/f1" style="margin-right: 10px;"><img src="facebook-icon.png" alt="Facebook" style="height: 30px;"></a>
-            <a href="https://www.twitter.com/f1" style="margin-right: 10px;"><img src="twitter-icon.png" alt="Twitter" style="height: 30px;"></a>
-            <a href="https://www.instagram.com/f1" style="margin-right: 10px;"><img src="instagram-icon.png" alt="Instagram" style="height: 30px;"></a>
-            <a href="https://www.youtube.com/f1"><img src="youtube-icon.png" alt="YouTube" style="height: 30px;"></a>
+            <a href="https://www.facebook.com/Formula1" style="margin-right: 10px;"><img src="/frontend/FooterImages/facebook.png" alt="Facebook" style="height: 30px;"></a>
+            <a href="https://www.twitter.com/f1" style="margin-right: 10px;"><img src="/frontend/FooterImages/x.png" alt="Twitter" style="height: 30px;"></a>
+            <a href="https://www.instagram.com/f1" style="margin-right: 10px;"><img src="/frontend/FooterImages/instagram.png" alt="Instagram" style="height: 30px;"></a>
+            <a href="https://www.youtube.com/f1"><img src="/frontend/FooterImages/youtube.png" alt="YouTube" style="height: 30px;"></a>
         </div>
     </div>
     
