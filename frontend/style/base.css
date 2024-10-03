@@ -30,7 +30,6 @@ html, body {
 }
 
 body {
-    line-height: 1.5; /* Đặt chiều cao dòng hợp lý */
     background-color: var(--background-color-main); /* Áp dụng màu nền chủ đạo */
     color: var(--text-white); /* Thiết lập màu chữ trắng */
 }
