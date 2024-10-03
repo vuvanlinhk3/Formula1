@@ -1,6 +1,8 @@
 // Import các trang từ thư mục pages
 import { renderHomePage } from './Pages/Home.js';
 import { renderDriversPage } from './Pages/Drivers.js';
+import { renderTeamsPage } from './Pages/Teams.js';
+
 // Import các trang khác nếu có
 // import { renderSchedulePage } from './Pages/Schedule.js';
 // import { renderTeamsPage } from './Pages/Teams.js';
@@ -22,7 +24,7 @@ function navigateTo(page) {
     // renderSchedulePage(root);
     document.title = 'Schedule'; // Thay đổi tiêu đề trang
   } else if (page === 'teams') {
-    // renderTeamsPage(root);
+    renderTeamsPage(root);
     document.title = 'Teams'; // Thay đổi tiêu đề trang
   } else if (page === 'standing') {
     // renderStandingPage(root);

@@ -1,0 +1,52 @@
+/* Container chính chứa các đội */
+.teams-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 1200px;
+  }
+  
+  /* Card của từng đội đua */
+  .team-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 280px;
+    background-color: #f1f1f1;
+    margin: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .team-card:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Logo đội đua */
+  .team-logo {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    object-fit: contain;
+    border-bottom: 2px solid #ccc;
+  }
+  
+  /* Thông tin đội đua */
+  .team-info {
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .team-name {
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .team-country {
+    font-size: 1rem;
+    color: #777;
+  }
+  
