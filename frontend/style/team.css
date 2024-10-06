@@ -5,12 +5,12 @@
   justify-content: space-around;
   margin: 0 auto;
   padding: 20px;
-  max-width: 1200px;
+  
 }
 
 /* Card của từng đội đua */
 .team-card {
-  width: 320px;
+  width: 520px;
   background-color: #f9f9f9;
   margin: 15px;
   border-radius: 10px;
@@ -41,9 +41,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+
 }
 
 .team-name {
+  color: #000000;
   font-size: 1.2rem;
   font-weight: bold;
 }
@@ -62,7 +66,7 @@
 
 .member-name {
   font-size: 1rem;
-  color: #555;
+  color: #000000;
   flex: 1;
   text-align: center;
   background-color: #f1f1f1;
@@ -73,10 +77,38 @@
 /* Hàng 4: Hình ảnh xe của team */
 .team-car {
   text-align: center;
+  border-top: 1px solid #000000;
 }
 
 .team-car-image {
   width: 100%;
   height: auto;
   border-radius: 8px;
+}
+
+.home-content {
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: center;
+ margin: auto;
+ max-width: var(--main-width);
+ flex-direction: column;
+}
+
+.blank {
+  color: #000;
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: center;
+ margin: auto;
+ max-width: var(--main-width);
+}
+
+.team-title{
+  font-size: 6rem;
+  color: #000;
+}
+.team-description {
+  font-size: 1.6rem;
+  color: #000;
 }
