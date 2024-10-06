@@ -27,11 +27,6 @@ export function renderTeamsPage(root) {
 
   // Gọi TeamCard và render nó vào trang
   TeamCard(homeContentFill);
-  TeamCard(homeContentFill);
-  TeamCard(homeContentFill);
-  TeamCard(homeContentFill);
-  TeamCard(homeContentFill);
-  TeamCard(homeContentFill);
 
 
   renderFooter(root);

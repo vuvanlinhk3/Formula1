@@ -1,35 +1,74 @@
+async function fetchTeamData() {
+  try {
+      const response = await fetch('http://localhost:3000/team'); // Đường dẫn tới API để lấy dữ liệu
+      if (!response.ok) {
+          throw new Error('Mạng lỗi khi lấy dữ liệu');
+      }
+      const data = await response.json(); // Chuyển đổi phản hồi thành JSON
+      return data.teams; // Trả về mảng các team
+  } catch (error) {
+      console.error('Lỗi: ', error);
+      return []; // Trả về mảng rỗng nếu có lỗi
+  }
+}
+
 export function TeamCard(root) {
-    const teamcard = document.createElement('div');
-    teamcard.innerHTML = `
-        <div class="teams-container">
-          <div class="team-card">
-            <!-- Hàng 1: ID của đội và tổng điểm -->
-            <div class="team-id-score">
-              <span class="team-id">ID: 01</span>
-              <span class="team-score">Total Points: 500</span>
-            </div>
+  const teamContainer = document.createElement('div');
+  teamContainer.classList.add('teams-container'); // Thêm class để tạo style cho team container
 
-            <!-- Hàng 2: Tên đội và logo -->
-            <div class="team-name-logo">
-              <span class="team-name">McLaren</span>
-              <img src="/frontend/imgs/McLaren Logo.png" alt="Team Logo" class="team-logo" />
-            </div>
+  async function renderTeamPage() {
+      try {
+          const teamData = await fetchTeamData(); // Lấy dữ liệu từ API
+          console.log("Dữ liệu đội đua:", teamData);
+          
+          // Kiểm tra xem teamData có phải là một mảng không
+          if (Array.isArray(teamData) && teamData.length > 0) {
+              // Xóa sạch dữ liệu hiện tại trước khi render mới
+              teamContainer.innerHTML = '';
 
-            <!-- Hàng 3: Tên của 2 thành viên -->
-            <div class="team-members">
-              <span class="member-name">Lewis Hamilton</span>
-              <span class="member-name">George Russell</span>
-            </div>
+              teamData.forEach(team => {
+                  const teamCard = document.createElement('div');
+                  teamCard.classList.add('team-card');
 
-            <!-- Hàng 4: Hình ảnh xe của team -->
-            <div class="team-car">
-              <img src="/frontend/imgs/McLaren.png" alt="Team Car" class="team-car-image" />
-            </div>
-          </div>
+                  // Tạo HTML cho từng thẻ team
+                  teamCard.innerHTML = `
+                      <!-- Hàng 1: ID của đội -->
+                      <div class="team-id-score">
+                          <span class="team-id">ID: ${team.TeamID}</span>
+                      </div>
 
-          <!-- Add more team cards as needed -->
-        </div>
+                      <!-- Hàng 2: Tên đội và logo -->
+                      <div class="team-name-logo">
+                          <span class="team-name">${team.TeamName}</span>
+                          <img src="${team.TeamPic || '/default-logo.png'}" alt="Team Logo" class="team-logo" />
+                      </div>
 
-    `;
-    root.appendChild(teamcard);
+                      <!-- Hàng 3: Tên các thành viên -->
+                      <div class="team-members">
+                          ${team.Members.map(member => `<span class="member-name">${member}</span>`).join('')}
+                      </div>
+                       <!-- Hàng 4: Hình ảnh xe của team -->
+                        <div class="team-car">
+                            <img src="${team.TeamPic ||"/frontend/imgs/McLaren.png"}" alt="Team Car" class="team-car-image" />
+                        </div>
+                        
+                  `;
+
+                  // Thêm thẻ team vào container
+                  teamContainer.appendChild(teamCard);
+              });
+          } else {
+              teamContainer.innerHTML = '<p>Không có dữ liệu đội đua.</p>';
+          }
+      } catch (error) {
+          console.error('Lỗi khi render trang team:', error);
+          teamContainer.innerHTML = '<p>Đã xảy ra lỗi khi tải dữ liệu.</p>';
+      }
+  }
+
+  // Gọi hàm renderTeamPage
+  renderTeamPage();
+
+  // Thêm teamContainer vào root
+  root.appendChild(teamContainer);
 }

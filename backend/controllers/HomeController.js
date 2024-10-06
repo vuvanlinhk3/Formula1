@@ -25,7 +25,7 @@ class HomeController {
             `);
             
             // In ra driverInfo để kiểm tra dữ liệu
-            console.log('Thông tin tay đua:', driverInfo);
+            // console.log('Thông tin tay đua:', driverInfo);
 
             // Tạo kết quả
             const result = topDrivers.map(driver => {
@@ -40,7 +40,7 @@ class HomeController {
                         flagImage: driverData.FlagPic // Ảnh cờ quốc tịch
                     };
                 } else {
-                    console.error(`Không tìm thấy thông tin tay đua cho DriverID: ${driver.DriverID}`);
+                    // console.error(`Không tìm thấy thông tin tay đua cho DriverID: ${driver.DriverID}`);
                     return null; // Trả về null hoặc xử lý tùy theo nhu cầu
                 }
             }).filter(item => item !== null); // Lọc bỏ các item null
