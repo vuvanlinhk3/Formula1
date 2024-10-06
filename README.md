@@ -406,3 +406,13 @@ JavaScript hỗ trợ nhiều loại sự kiện để tương tác với ngư�
      ```
 
 <p style="color: green;">GOOD LUCK! 🍀</p>
+
+#Cài đặt Node.js và gói kết nối với SQL Server
+
+```bash
+    npm install mssql
+     ```
+
+     npm install cors
+
+

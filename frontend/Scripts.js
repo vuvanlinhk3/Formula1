@@ -1,6 +1,9 @@
 // Import các trang từ thư mục pages
 import { renderHomePage } from './Pages/Home.js';
 import { renderDriversPage } from './Pages/Drivers.js';
+import { renderInfoDriversPage } from './Pages/InforDriver.js';
+import { renderInfoTeamsPage } from './Pages/InforTeam.js';
+import {renderTeamsPage} from "./Pages/Teams.js";
 // Import các trang khác nếu có
 // import { renderSchedulePage } from './Pages/Schedule.js';
 // import { renderTeamsPage } from './Pages/Teams.js';
@@ -22,7 +25,7 @@ function navigateTo(page) {
     // renderSchedulePage(root);
     document.title = 'Schedule'; // Thay đổi tiêu đề trang
   } else if (page === 'teams') {
-    // renderTeamsPage(root);
+    renderTeamsPage(root);
     document.title = 'Teams'; // Thay đổi tiêu đề trang
   } else if (page === 'standing') {
     // renderStandingPage(root);
@@ -43,6 +46,7 @@ function navigateTo(page) {
     renderHomePage(root); // Trang mặc định
     document.title = 'Home';
   }
+
 }
 
 // Hàm để lấy hash từ URL và chuyển đổi hash thành page
