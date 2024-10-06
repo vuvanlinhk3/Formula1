@@ -11,9 +11,10 @@ function navigateTo(page) {
   // if (page === 'home') {
   //   renderHomePage(root);
   // } else if (page === 'about') {
-  //   renderDriversPage(root);
+    // renderDriversPage(root);
   // } 
-renderDriverCard(root)
+// renderDriverCard(root)
+renderDriversPage(root)
 }
 window.navigateTo = navigateTo;
 // Khởi động trang mặc định (ví dụ: trang home)
