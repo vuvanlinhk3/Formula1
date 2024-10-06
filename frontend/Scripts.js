@@ -4,6 +4,7 @@ import { renderDriversPage } from './Pages/Drivers.js';
 import { renderInfoDriversPage } from './Pages/InforDriver.js';
 import { renderInfoTeamsPage } from './Pages/InforTeam.js';
 import {renderTeamsPage} from "./Pages/Teams.js";
+
 // Import các trang khác nếu có
 // import { renderSchedulePage } from './Pages/Schedule.js';
 // import { renderTeamsPage } from './Pages/Teams.js';
