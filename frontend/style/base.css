@@ -4,8 +4,9 @@
     --button-primary-color: rgba(255, 69, 0, 1); /* Màu nút cam đỏ hơi nhạt */
     --button-black-color: #000000; /* Màu nút đen */
     --text-white: #ffffff; /* Màu chữ trắng */
-    --text-description: rgba(255, 255, 255, 0.8); /* Màu chữ hơi trắng */
-
+    --text-black: #000000;
+    --text-description: rgba(255, 255, 255, 0.562); /* Màu chữ hơi trắng */
+    --border-black:#38383f;
     /* Kích thước màn hình */
     --main-width: 1200px; /* Chiều rộng màn hình chính */
 
@@ -15,7 +16,23 @@
     /* Font chữ giống với trang web Formula 1 */
     --font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Bạn có thể thay đổi font chữ nếu cần */
 }
-
+.passion-one-regular {
+    font-family: "Passion One", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+  }
+  
+  .passion-one-bold {
+    font-family: "Passion One", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .passion-one-black {
+    font-family: "Passion One", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+  }
 /* CSS Reset */
 * {
     margin: 0;
@@ -27,10 +44,12 @@ html, body {
     height: 100%;
     font-size: var(--base-font-size); /* Thiết lập lại kích thước font chữ */
     font-family: var(--font-family); /* Thiết lập font chữ mặc định */
+    /* background-color: #000000; */
 }
 
 body {
-    background-color: var(--background-color-main); /* Áp dụng màu nền chủ đạo */
+
+    line-height: 1.5; /* Đặt chiều cao dòng hợp lý */
     color: var(--text-white); /* Thiết lập màu chữ trắng */
 }
 

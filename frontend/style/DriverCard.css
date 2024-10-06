@@ -1,17 +1,7 @@
-body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    background-color: #f8f9fa;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 5px ;
-}
-
 .driver-card {
     background-color: white;
     border-top: 2px solid black; 
-    border-right: 2px solid black;/* Viền đen */
+    border-right: 2px solid black; /* Viền đen */
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     width: 350px;
@@ -31,13 +21,16 @@ body {
     height: 30px;
     display: flex; /* Bố cục ngang (2 cột) */
     justify-content: space-between;
-    padding: 2px 2px 5px 0px ;
-    border-left: 0px;
-    font-family:Georgia, 'Times New Roman', Times, serif ;
+    padding: 2px 2px 5px 0px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
+
 .part2 {
     height: 50px;
-    border-left: #2853b1 5px solid ;
+    border-left: #2853b1 5px solid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 1px;
 }
 
@@ -60,7 +53,7 @@ body {
 .score {
     font-size: 24px;
     font-weight: bold;
-
+    color: black;
 }
 
 .pts {
@@ -80,19 +73,10 @@ body {
     margin: 10px 5px;
 }
 
-.divider1 {
-    border: 1px solid #ceadad;
-    margin: 10px 5px 0 5px;
-}
-.part2 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 .name h2 {
     margin: 0 3px;
-    font-size: 25px ;
+    font-size: 25px;
+    color: black;
 }
 
 .flag {
@@ -107,43 +91,45 @@ body {
     justify-content: space-between;
     margin-top: 0px;
 }
+
 .team-info {
     display: flex;
     flex-direction: column;
-    position: absolute;
-    height: 300px;
     justify-content: space-between;
-    margin-left: 0px;
-    margin-top: -10px;
 }
 
 .team-name {
-    border-left: 0px;
-   padding: 0 ;
+    padding: 0;
     font-size: 15px;
     color: #1a1616;
+    margin: 1.5rem .5rem;
 }
 
 .driver-number {
-    width: max-content;
-    padding: 50px 20px 0 0;
-    margin-bottom: -25px;
-    margin-left: -10px;
     font-style: oblique;
     font-weight: bold;
     font-size: 90px;
     color: #d81010;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 50px 20px 0 0;
+    margin-bottom: -25px;
+    margin-left: -10px;
 }
 
-.driver-image{
+.driver-image {
     display: flex;
     justify-content: end;
     width: 350px;
-   
 }
 
 .driver-image img {
     width: 300px; /* Kích thước ảnh người lái */
     height: auto; /* Giữ tỉ lệ ảnh */
+}
+.driver_list{
+    display: flex;
+    max-width: var(--main-width);
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
 }
