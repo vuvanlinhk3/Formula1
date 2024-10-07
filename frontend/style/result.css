@@ -1,0 +1,90 @@
+.result-container{
+    background-color: rgb(246, 241, 238);
+    margin: 50px 100px 20px 100px;
+}
+.select{
+    display: flex;
+    flex-direction: row;
+    width:100%;
+    justify-content: space-between;
+}
+.select-track{
+    color:black;
+    display: block;
+    width: 50%;
+    height: 100px; /* Đặt chiều cao cố định */
+    padding: 20px;
+    overflow-y: auto; /* Kích hoạt cuộn dọc */
+    scroll-behavior: smooth; /* Cuộn mượt mà */
+    border: 1px solid #ccc;
+    
+}
+
+.select-track-content button {
+    display: block;
+    font-size: 32pt;
+    cursor: pointer; /* Hiển thị con trỏ tay khi di chuột qua */
+    padding: 10px; /* Khoảng cách bên trong nút */
+    border: none; /* Không có đường viền */
+    text-align: center; /* Căn giữa chữ */
+}
+.select-track-content button:hover{
+    text-decoration: underline;
+}
+
+
+.select-year{
+    color:black;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 50%;
+    height: 100px; /* Đặt chiều cao cố định */
+    padding: 20px;
+    overflow-y: auto; /* Kích hoạt cuộn dọc */
+    scroll-behavior: smooth; /* Cuộn mượt mà */
+    border: 1px solid #ccc;
+}
+
+.select-year-content button {
+    display: flex;
+    flex-direction: column;
+    margin: 5px 0; /* Khoảng cách giữa các nút */
+    cursor: pointer; /* Hiển thị con trỏ tay khi di chuột qua */
+    padding: 10px; /* Khoảng cách bên trong nút */
+    border: none; /* Không có đường viền */
+    text-align: center; /* Căn giữa chữ */
+}
+.select-year-content button:hover{
+    text-decoration: underline;
+}
+
+.title{
+    color:black;
+    font-size: x-large;
+    font-family: "Passion One", sans-serif;
+    margin: 15px 15px;
+}
+
+.detail-result {
+    width: 100%; /* Đặt chiều rộng của bảng */
+    border-collapse: collapse; /* Gộp các đường viền của các ô lại với nhau */
+}
+.detail-result th,
+.detail-result td {
+    color:black;
+    border: 1px solid #ccc; /* Đường viền cho các ô */
+    padding: 10px; /* Khoảng cách bên trong các ô */
+    text-align: left; /* Căn trái cho nội dung trong ô */
+    font-size: small;
+}
+
+.detail-result th {
+    background-color: #f2f2f2; /* Màu nền cho tiêu đề */
+}
+
+.detail-result tr:nth-child(even) {
+    background-color: #eae9e9; /* Màu nền cho các hàng chẵn */
+}
+
+
