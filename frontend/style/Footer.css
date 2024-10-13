@@ -1,0 +1,124 @@
+.row1 {
+    background-color: #000000;
+}
+
+.site-footer {
+    background-color: rgb(1, 1, 24);
+    color: #ffffff;
+}
+
+.footer-top {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.app-download a img {
+    height: 40px;
+    margin-right: 15px;
+} 
+.social-media{
+    display: flex;
+}
+.social-media a {
+    border: 1px solid #9e9e9e59;
+    width: 30px; /* Chiều rộng */
+    height: 30px; /* Chiều cao */
+    display: flex; /* Sử dụng flexbox để căn giữa */
+    justify-content: center; 
+    align-items: center; 
+    flex-wrap: nowrap;
+    border-radius: 3px;
+    margin: 0 5px;
+    background-color: #c5c4c400;
+    transition: all .2s linear;
+}
+.social-media a:hover{
+    border: 1px solid #9e9e9e;
+    color: var(--text-white);
+    background-color:#94949473 ;
+}
+.social-media a i {
+    /* margin-right: 20px; */
+    font-size: 2rem;
+}
+
+.partners-title {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.partners-title p {
+    font-size: 3rem;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.partner-logos {
+    display: flex;
+    flex-wrap: wrap; /* Cho phép các logo xuống dòng nếu không đủ chỗ */
+    gap: 15px;
+    max-width: 1200px;
+    margin: 0 auto; /* Căn giữa toàn bộ khối chứa logo */
+    justify-content: center; /* Căn giữa các logo bên trong flex container */
+    align-items: center; /* Căn giữa theo chiều dọc nếu cần */
+    padding: 15px 0;
+    border-top: 1px solid #ffffff;
+
+}
+
+.partner-logos div {
+    display: flex;
+    justify-content: center; /* Căn giữa logo trong từng ô */
+    align-items: center; /* Căn giữa logo trong từng ô */
+}
+
+.partner-logos img {
+    max-height: 50px; /* Đặt kích thước tối đa cho logo để đảm bảo đồng nhất */
+    object-fit: contain;
+}
+
+
+.footer-links {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.footer-links ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.footer-links ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-top: 1px solid;
+}
+
+.footer-logo img {
+    height: 20px;
+}
+
+.copyright {
+    font-size: 14px;
+    color: var(--text-description);
+}

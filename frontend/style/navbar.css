@@ -23,13 +23,15 @@
 }
 
 .nav-items li {
-   padding: 20px 35px;
+    padding: 20px 0px;
 }
-
+.nav-items li a{
+    padding: 20px 35px;
+ }
 .nav-items a {
     color: white; /* Màu chữ */
     text-decoration: none; /* Bỏ gạch chân */
-    font-size: 16px; /* Kích thước chữ */
+    font-size: 1.8rem; /* Kích thước chữ */
     transition: text-decoration 0.3s ease;
 }
 
