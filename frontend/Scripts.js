@@ -4,6 +4,7 @@ import { renderDriversPage } from './Pages/Drivers.js';
 import { renderInfoDriversPage } from './Pages/InforDriver.js';
 import { renderInfoTeamsPage } from './Pages/InforTeam.js';
 import {renderTeamsPage} from "./Pages/Teams.js";
+import { renderSchedulePage } from './Pages/Schedule.js';
 
 // Import các trang khác nếu có
 // import { renderSchedulePage } from './Pages/Schedule.js';
@@ -23,7 +24,7 @@ function navigateTo(page) {
     renderDriversPage(root);
     document.title = 'Drivers'; // Thay đổi tiêu đề trang
   } else if (page === 'schedule') {
-    // renderSchedulePage(root);
+    renderSchedulePage(root);
     document.title = 'Schedule'; // Thay đổi tiêu đề trang
   } else if (page === 'teams') {
     renderTeamsPage(root);
