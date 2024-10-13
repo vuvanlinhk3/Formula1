@@ -1,39 +1,36 @@
 import { renderHeader } from '../components/Header.js';
 import { renderFooter } from '../components/Footer.js';
 import { renderNavBar } from '../components/NavBar.js';
-import {renderDriverCard} from '../components/DriverCard.js';
+import { DriverCard } from '../components/DriverCard.js'; // Import DriverCard
 
 export function renderDriversPage(root) {
-  renderHeader(root);
-    renderNavBar(root)
-  const aboutContent = document.createElement('div');
-  aboutContent.innerHTML = `
-    <div class = "driver_body">
-        <div class = "driver_top">
-            <div class = "driver_title">
-            
+    // Render header và navbar
+    renderHeader(root);
+    renderNavBar(root);
+
+    // Tạo phần content chứa danh sách các tay đua
+    const driverContent = document.createElement('div');
+    driverContent.className = 'driver-content'; // Thêm class cho container chính
+    root.appendChild(driverContent);
+    
+    driverContent.innerHTML = `
+        <div class="driver-bruh">
+            <div class="driver-title passion-one-regular">
+                Danh sách tay đua
             </div>
-            <div class = "driver_des">
-            
+            <div class="driver-description">
+                Thông tin về các tay đua trong mùa giải F1 2024.
             </div>
         </div>
-        <div class = "driver_list">
-            <!-- đây là chỗ để renderdrivercard -->
+        <div class="blank">
         </div>
-    </div>
-  `;
-  root.appendChild(aboutContent);
-const driverList = document.querySelector('.driver_list')
-console.log(driverList);
-    renderDriverCard(driverList)
-    renderDriverCard(driverList)
-    renderDriverCard(driverList)
-    renderDriverCard(driverList)
-    renderDriverCard(driverList)
-    renderDriverCard(driverList)
+    `;
 
+    const driverContentFill = driverContent.querySelector(".blank");
 
-  renderFooter(root);
+    // Gọi DriverCard và render nó vào trang
+    DriverCard(driverContentFill);
 
-  // Điều hướng về trang Home
+    // Render footer
+    renderFooter(root);
 }

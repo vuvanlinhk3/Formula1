@@ -7,6 +7,7 @@
     --text-black: #000000;
     --text-description: rgba(255, 255, 255, 0.562); /* Màu chữ hơi trắng */
     --border-black:#38383f;
+    --text-des-black:#38383f9a;
     /* Kích thước màn hình */
     --main-width: 1200px; /* Chiều rộng màn hình chính */
 
@@ -18,7 +19,7 @@
 }
 .passion-one-regular {
     font-family: "Passion One", sans-serif;
-    font-weight: 100;
+    font-weight: 400;
     font-style: normal;
   }
   

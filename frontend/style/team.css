@@ -1,0 +1,114 @@
+/* Container chính chứa các đội */
+.teams-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 0 auto;
+  padding: 20px;
+  
+}
+
+/* Card của từng đội đua */
+.team-card {
+  width: 520px;
+  background-color: #f9f9f9;
+  margin: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Hàng 1: ID team và tổng điểm */
+.team-id-score {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+.team-id {
+  color: #555;
+}
+
+.team-score {
+  color: #333;
+}
+
+/* Hàng 2: Tên đội và logo */
+.team-name-logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+
+}
+
+.team-name {
+  color: #000000;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.team-logo {
+  width: 60px;
+  height: auto;
+}
+
+/* Hàng 3: Tên các thành viên đội đua */
+.team-members {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.member-name {
+  font-size: 1rem;
+  color: #000000;
+  flex: 1;
+  text-align: center;
+  background-color: #f1f1f1;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+/* Hàng 4: Hình ảnh xe của team */
+.team-car {
+  text-align: center;
+  border-top: 1px solid #000000;
+}
+
+.team-car-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.home-content {
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: center;
+ margin: auto;
+ max-width: var(--main-width);
+ flex-direction: column;
+}
+
+.blank {
+  color: #000;
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: center;
+ margin: auto;
+ max-width: var(--main-width);
+}
+
+.team-title{
+  font-size: 6rem;
+  color: #000;
+}
+.team-description {
+  font-size: 1.6rem;
+  color: #000;
+}

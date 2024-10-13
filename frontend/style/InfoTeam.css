@@ -1,0 +1,84 @@
+/* Container chính */
+.maininfotem{
+    max-width: var(--main-width); /* 1200px -> 120rem */
+    margin: 3rem auto;
+    box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.1); /* 4px -> 0.4rem, 10px -> 1rem */
+    background-color: #f9f9f9;
+    border-radius: 1rem; /* 10px -> 1rem */
+
+}
+.team-info-container {
+
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem; /* 20px -> 2rem */
+}
+
+/* Phần bên trái chứa thông tin đội đua */
+.team-info-left {
+    flex: 1;
+    margin-right: 2rem; /* 20px -> 2rem */
+}
+
+.team-details {
+    color: var(--text-des-black); /* Đặt màu chữ thành màu đen */
+    font-family: Arial, sans-serif;
+    font-size: 1.8rem; /* 16px -> 1.6rem */
+    text-align: justify; /* Căn đều hai bên */
+}
+
+.team-details p {
+    margin: 1rem 0; /* 10px -> 1rem */
+    line-height: 1.8rem; /* Điều chỉnh khoảng cách giữa các dòng 16px -> 1.6rem */
+    
+}
+
+.team-details strong {
+    font-weight: bold;
+    display: inline-block;
+    width: 20rem; /* 200px -> 20rem */
+}
+
+/* Phần bên phải chứa hình ảnh và thông tin tay đua */
+.team-info-right {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+}
+
+.driver-card {
+    text-align: center;
+    background-color: #fff;
+    padding: 1rem; /* 10px -> 1rem */
+    border-radius: 1rem; /* 10px -> 1rem */
+    box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.1); /* 4px -> 0.4rem, 10px -> 1rem */
+    width: 45%;
+    cursor: pointer;
+    transition: all .2s linear;
+}
+.driver-card:hover{
+    background-color: var(--primary-color);
+}
+.driver-img {
+    max-width: 100%;
+    border-radius: 1rem; /* 10px -> 1rem */
+    margin-bottom: 1.5rem; /* 15px -> 1.5rem */
+}
+
+.driver-info h1 {
+    font-size: 4.8rem; /* Kích thước font */
+    margin: 0;
+    color: var(--text-black);
+}
+
+.driver-info p:nth-child(2) {
+    margin: 0.5rem 0; /* 5px -> 0.5rem */
+    font-size: 1.8rem; /* 18px -> 1.8rem */
+    color: var(--text-black);
+}
+
+.driver-info p:last-child {
+    margin: 0.5rem 0; /* 5px -> 0.5rem */
+    font-size: 1.4rem; /* 14px -> 1.4rem */
+    color: var(--text-des-black);
+}

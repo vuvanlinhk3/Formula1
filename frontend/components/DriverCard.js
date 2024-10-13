@@ -1,41 +1,79 @@
-export function renderDriverCard(driverList) {
-    // Tạo một phần tử div để chứa driver card
-    const driverCard = document.createElement('div');
-    driverCard.className = 'driver-card'; // Gán class cho driver card
-    // Thêm nội dung cho driver card
-    driverCard.innerHTML = `
-        <div class="part1">
-            <div class="rank">1</div>
-            <div class="points-wrapper">
-                <span class="score">331</span>
-                <span class="pts">PTS</span>
-            </div>
-        </div>
-        <hr class="divider">
-        <div class="part2">
-            <div class="name">
-                <h2>MAX</h2>
-                <h2>VERSTAPPEN</h2>
-            </div>
-            <img class="flag" src="image/flag.gif" alt="Cờ Hà Lan">
-        </div>
-        <hr class="divider">
-        <div class="part3">
-            <div class="team-info">
-                <p class="team-name">Red Bull Racing</p>
-                <p class="driver-number">1</p>
-            </div>
-            <div class="driver-image">
-                <img src="image/max.avif" alt="Max Verstappen">
-            </div>
-        </div>
-    `;
+async function fetchDriverData() {
+    try {
+        const response = await fetch('http://localhost:3000/drivers'); // Đường dẫn tới API để lấy dữ liệu
+        if (!response.ok) {
+            throw new Error('Mạng lỗi khi lấy dữ liệu');
+        }
+        const data = await response.json(); // Chuyển đổi phản hồi thành JSON
+        return data.drivers; // Trả về mảng các tay đua
+    } catch (error) {
+        console.error('Lỗi: ', error);
+        return []; // Trả về mảng rỗng nếu có lỗi
+    }
+}
 
-    // Gắn driver card vào root
-    driverList.appendChild(driverCard);
+export function DriverCard(root) {
+    const driverContainer = document.createElement('div');
+    driverContainer.classList.add('drivers-container'); // Thêm class để tạo style cho driver container
 
-    // Thêm sự kiện click cho driver card
-    driverCard.addEventListener('click', function () {
-        alert('Driver card clicked!');
-    });
+    async function renderDriverPage() {
+        try {
+            const driverData = await fetchDriverData(); // Lấy dữ liệu từ API
+            console.log("Dữ liệu tay đua:", driverData);
+            
+            // Kiểm tra xem driverData có phải là một mảng không
+            if (Array.isArray(driverData) && driverData.length > 0) {
+                // Xóa sạch dữ liệu hiện tại trước khi render mới
+                driverContainer.innerHTML = '';
+
+                driverData.forEach(driver => {
+                    const driverCard = document.createElement('div');
+                    driverCard.classList.add('driver-card');
+
+                    // Tạo HTML cho từng thẻ tay đua
+                    driverCard.innerHTML = `
+                        <div class="part1">
+                            <div class="rank">${driver.DriverID}</div>
+                            <div class="points-wrapper">
+                                <span class="score">${driver.Points}</span>
+                                <span class="pts">PTS</span>
+                            </div>
+                        </div>
+                        <hr class="divider">
+                        <div class="part2">
+                            <div class="name">
+                                <h2>${driver.DriverName.split(' ')[0].toUpperCase()}</h2>
+                                <h2>${driver.DriverName.split(' ')[1].toUpperCase()}</h2>
+                            </div>
+                            <img class="flag" src="${driver.FlagPic}" alt="Cờ của ${driver.DriverName}">
+                        </div>
+                        <hr class="divider">
+                        <div class="part3">
+                            <div class="team-info">
+                                <p class="team-name">${driver.TeamName}</p>
+                                <p class="driver-number">${driver.DriverNumber}</p>
+                            </div>
+                            <div class="driver-image">
+                                <img src="${driver.DriverPicTwo}" alt="${driver.DriverName}">
+                            </div>
+                        </div>
+                    `;
+
+                    // Thêm thẻ driver vào container
+                    driverContainer.appendChild(driverCard);
+                });
+            } else {
+                driverContainer.innerHTML = '<p>Không có dữ liệu tay đua.</p>';
+            }
+        } catch (error) {
+            console.error('Lỗi khi render trang tay đua:', error);
+            driverContainer.innerHTML = '<p>Đã xảy ra lỗi khi tải dữ liệu.</p>';
+        }
+    }
+
+    // Gọi hàm renderDriverPage
+    renderDriverPage();
+
+    // Thêm driverContainer vào root
+    root.appendChild(driverContainer);
 }
