@@ -22,6 +22,7 @@ export async function renderHomePage(root) {
     renderNavBar(root)
   
     const homeContent = document.createElement('div');
+    homeContent.className = 'app_container_home';
     homeContent.innerHTML = `
       <div class="cangiua">
           <div class="border-big">
@@ -39,61 +40,8 @@ export async function renderHomePage(root) {
       </div>
   
       <div class="container passion-one-regular">
-          <div class="event-card">
-              <img src="/frontend/imgs/co.png" alt="Netherlands" class="flag">
-              <div class="date">25</div>
-              <div class="month">AUG</div>
-          </div>
-          <div class="event-card passion-one-regular">
-              <img src="/frontend/imgs/co.png" alt="Italy" class="flag">
-              <div class="date">1</div>
-              <div class="month">SEP</div>
-          </div>
-          <div class="event-card passion-one-regular">
-              <img src="/frontend/imgs/co.png" alt="Azerbaijan" class="flag">
-              <div class="date">15</div>
-              <div class="month">SEP</div>
-          </div>
-          <div class="event-card passion-one-black">
-              <img src="/frontend/imgs/co.png" alt="Singapore" class="flag">
-              <div class="date">22</div>
-              <div class="month">SEP</div>
-          </div>
-          <div class="event-card highlight">
-              <img src="/frontend/imgs/co.png" alt="United States" class="flag">
-              <h2>FORMULA 1 PIRELLI UNITED STATES GRAND PRIX 2024</h2>
-              <div class="date-hightlight date">18 OCT - 20 OCT 2024</div>
-              <button class="view-schedule passion-one-regular">VIEW SCHEDULE</button>
-              <div class="time-info">
-                  <div class="outtime">Austin 09:01</div>
-                  <div>Your time 21:01</div>
-              </div>
-          </div>
-          <div class="event-card">
-              <img src="/frontend/imgs/co.png" alt="Mexico" class="flag">
-              <div class="date">27</div>
-              <div class="month">OCT</div>
-          </div>
-          <div class="event-card">
-              <img src="/frontend/imgs/co.png" alt="Brazil" class="flag">
-              <div class="date">3</div>
-              <div class="month">NOV</div>
-          </div>
-          <div class="event-card">
-              <img src="/frontend/imgs/co.png" alt="Las Vegas" class="flag">
-              <div class="date">23</div>
-              <div class="month">NOV</div>
-          </div>
-          <div class="event-card">
-              <img src="/frontend/imgs/co.png" alt="Qatar" class="flag">
-              <div class="date">1</div>
-              <div class="month">DEC</div>
-          </div>
-          <div class="event-card">
-              <img src="/frontend/imgs/co.png" alt="Abu Dhabi" class="flag">
-              <div class="date">8</div>
-              <div class="month">DEC</div>
-          </div>
+            <!-- ĐÂY LÀ LỊCH TRÌNH-->
+            
       </div>
   
       <!-- Standing driver -->
@@ -125,6 +73,109 @@ export async function renderHomePage(root) {
             const homeData = await fetchHomeData(); // Lấy dữ liệu từ API
             const topList = homeContent.querySelector('.top-list'); // Lấy thẻ <div class="top-list"> từ homeContent
             const topDriver = homeContent.querySelector(".top-standing");
+            const schedulesContainer = homeContent.querySelector('.container'); // Lấy thẻ chứa lịch trình
+            // Bổ sung thêm dữ liệu lịch trình vào phần lịch trình
+            if (Array.isArray(homeData.schedules) && homeData.schedules.length > 0) {
+                const today = new Date(); // Lấy ngày hôm nay
+                let closestSchedule = null; // Khởi tạo biến lưu lịch trình gần nhất
+
+                // Tìm lịch trình gần nhất trong tương lai
+                homeData.schedules.forEach(schedule => {
+                    const scheduleDate = new Date(schedule.Date); // Chuyển đổi ngày thành đối tượng Date
+                    if (scheduleDate > today) {
+                        if (!closestSchedule || scheduleDate < new Date(closestSchedule.Date)) {
+                            closestSchedule = schedule; // Cập nhật lịch trình gần nhất
+                        }
+                    }
+                });
+
+                // Hiển thị lịch trình gần nhất
+                // Thêm dữ liệu về múi giờ theo địa điểm
+                const locationTimeZones = {
+                    'austin': 'America/Chicago',
+                    'tokyo': 'Asia/Tokyo',
+                    'paris': 'Europe/Paris',
+                    'melbourne': 'Australia/Melbourne',
+                    // Thêm các địa điểm khác theo tên và múi giờ tương ứng
+                };
+
+                if (closestSchedule) {
+                    const highlightItem = document.createElement('div');
+                    highlightItem.className = 'event-card highlight'; // Thêm class highlight
+                    const highlightDate = new Date(closestSchedule.Date);
+                    const day = highlightDate.getDate(); // Lấy ngày
+                    const month = highlightDate.toLocaleString('default', { month: 'short' }).toUpperCase(); // Lấy tháng viết tắt và chuyển thành chữ hoa
+
+                    // Lấy múi giờ dựa theo tên địa điểm tổ chức
+                    const eventTimeZone = locationTimeZones[closestSchedule.Location] || 'UTC'; // Lấy múi giờ, mặc định là UTC nếu không tìm thấy
+
+                    highlightItem.innerHTML = `
+                        <img src="${closestSchedule.FlagRacePic}" alt="${closestSchedule.RaceName}" class="flag">
+                        <h2>${closestSchedule.RaceNameNational} ${closestSchedule.RaceName}</h2>
+                        <div class="date-highlight date">${day} ${month} - ${highlightDate.getDate()} ${month} ${highlightDate.getFullYear()}</div>
+                        <button class="view-schedule passion-one-regular">VIEW SCHEDULE</button>
+                        <div class="time-info">
+                            <div class="outtime">${closestSchedule.Location} <span id="event-time"></span></div> <!-- Hiển thị giờ địa điểm tổ chức -->
+                            <div>Your time <span id="user-time"></span></div> <!-- Hiển thị giờ theo múi giờ của người dùng -->
+                        </div>
+                    `;
+                    schedulesContainer.appendChild(highlightItem); // Thêm lịch trình gần nhất vào phần hiển thị
+
+                    // Hàm cập nhật giờ liên tục
+                    function updateTimes() {
+                        const now = new Date(); // Lấy thời gian hiện tại
+
+                        // Lấy giờ theo múi giờ của người dùng
+                        const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+                        const userTime = now.toLocaleString('en-US', { timeZone: userTimeZone, hour: '2-digit', minute: '2-digit' });
+
+                        // Lấy giờ theo múi giờ của địa điểm tổ chức
+                        const eventTime = now.toLocaleString('en-US', { timeZone: eventTimeZone, hour: '2-digit', minute: '2-digit' });
+
+                        // Cập nhật nội dung HTML
+                        document.getElementById('event-time').textContent = eventTime;
+                        document.getElementById('user-time').textContent = userTime;
+                    }
+
+                    // Gọi hàm cập nhật giờ mỗi giây
+                    updateTimes(); // Cập nhật ngay khi load
+                    setInterval(updateTimes, 1000); // Cập nhật mỗi giây
+                }
+
+
+
+                
+
+                // Hiển thị các lịch trình còn lại
+                homeData.schedules.forEach(schedule => {
+                    const scheduleDate = new Date(schedule.Date); // Chuyển đổi ngày thành đối tượng Date
+                    const day = scheduleDate.getDate(); // Lấy ngày
+                    const month = scheduleDate.toLocaleString('default', { month: 'short' }).toUpperCase(); // Lấy tháng viết tắt và chuyển thành chữ hoa
+
+                    // Nếu lịch trình không phải là lịch trình gần nhất thì hiển thị bình thường
+                    if (schedule !== closestSchedule) {
+                        const scheduleItem = document.createElement('div');
+                        scheduleItem.className = 'event-card'; // Thêm class để có thể định dạng
+                        
+                        scheduleItem.innerHTML = `
+                            <img src="${schedule.FlagRacePic}" alt="${schedule.RaceName}" class="flag">
+                            <div class="date">${day}</div>
+                            <div class="month">${month}</div>
+                        `;
+                        schedulesContainer.appendChild(scheduleItem); // Thêm lịch trình vào phần hiển thị
+                    }
+                });
+            } else {
+                console.error('Không có dữ liệu lịch trình:', homeData);
+                schedulesContainer.innerHTML = '<p>Không có lịch trình để hiển thị.</p>'; // Thông báo nếu không có dữ liệu
+            }
+
+
+
+
+
+            
+
             // Kiểm tra xem homeData có phải là một mảng hay không
             if (Array.isArray(homeData.top3Drivers)) {
                 homeData.top3Drivers.forEach(item => {
@@ -145,6 +196,7 @@ export async function renderHomePage(root) {
                     topDriver.appendChild(item1); // Thêm itemDiv vào topList
                 });
             } 
+    
             if (Array.isArray(homeData.topDrivers)) {
                 homeData.topDrivers.forEach(item => {
                     const itemDiv = document.createElement('div');
@@ -167,15 +219,17 @@ export async function renderHomePage(root) {
                     `;
                     topList.appendChild(itemDiv); // Thêm itemDiv vào topList
                 });
-            }
-            else {
+            } else {
                 console.error('Dữ liệu từ API không phải là mảng:', homeData);
                 // Bạn có thể hiển thị thông báo lỗi cho người dùng
                 topList.innerHTML = '<p>Không có dữ liệu để hiển thị.</p>';
             }
-
-
-
+    
+            
+    
+            // Thêm schedulesContainer vào homeContent
+            homeContent.appendChild(schedulesContainer);
+    
         } catch (error) {
             console.error('Lỗi khi render trang home:', error);
             // Hiển thị thông báo lỗi khi có sự cố
@@ -185,6 +239,7 @@ export async function renderHomePage(root) {
     
     // Gọi hàm renderHomePage
     renderHomePage();
+    
     
     
   

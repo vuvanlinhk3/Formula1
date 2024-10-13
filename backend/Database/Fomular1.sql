@@ -38,6 +38,8 @@ CREATE TABLE RaceTracks(
     RaceTrackID INT PRIMARY KEY NOT NULL, /* ID trường đua */
     RaceTrackName VARCHAR(255) NOT NULL, /* Tên trường đua */
     RaceTrackPic VARCHAR(255) NOT NULL, /* Ảnh trường đua */
+	RaceNameNational VARCHAR(255) NOT NULL, /* Tên quốc gia */
+	FlagRacePic VARCHAR(255) NOT NULL, /* cờ quốc gia */
     Location VARCHAR(255) NOT NULL, /* Địa điểm trường đua */
     Length DECIMAL(10,2) NOT NULL /* Chiều dài trường đua */
 );
@@ -101,32 +103,31 @@ INSERT INTO Drivers(DriverID, DriverName, DriverBirth, PlaceOfBirth, DriverPic, 
 (21, 'Sargeant Logan', '2000-12-31', 'Fort Lauderdale, Florida', '/backend/Asset/DriverCardPic/logan.jpg', 2, 8, 'United State', '/backend/Asset/FlagPic/us.png', 0, 0, 37, '/backend/Asset/DriverPic/logan.png'),
 (22, 'Valtteri Bottas', '1989-08-28', 'Nastola, Finland', '/backend/Asset/DriverCardPic/bottas.jpg', 77, 10, 'Finland', '/backend/Asset/FlagPic/finland.png', 67, 1797, 240, '/backend/Asset/DriverPic/bottas.png');
 
-
-INSERT INTO RaceTracks(RaceTrackID, RaceTrackName, RaceTrackPic, Location, Length) VALUES
-	(1, 'Bahrain International Circuit', '/backend/Asset/RaceTrackPic/Bahrain_International_Circuit.png', 'Bahrain', 5.412),
-	(2, 'Albert Park Grand Prix Circuit', '/backend/Asset/RaceTrackPic/Albert_Park_Grand_Prix_Circuit.png', 'Australia', 5.278),
-	(3, 'Miami International Autodrome', '/backend/Asset/RaceTrackPic/Miami_International_Autodrome.png', 'United State', 5.412),
-	(4, 'Circuit Zandvoort', '/backend/Asset/RaceTrackPic/Circuit_Zandvoort.png', 'Netherland', 4.259),
-	(5, 'Autodromo Jose Carlos Pace', '/backend/Asset/RaceTrackPic/Autodromo_Jose_Carlos_Pace.png', 'Brazil', 4.309),
-	(6, 'Circuit de Barcelona-Catalunya', '/backend/Asset/RaceTrackPic/Circuit_de_Barcelona-Catalunya.png', 'Spain', 4.657),
-	(7, 'Marina Bay Street Circuit', '/backend/Asset/RaceTrackPic/Marina_Bay_Street_Circuit.png', 'Singapore', 4.94),
-	(8, 'Jeddah Corniche Circuit', '/backend/Asset/RaceTrackPic/Jeddah_Corniche_Circuit.png', 'Saudi Arabia', 6.174),
-	(9, 'Shanghai International Circuit', '/backend/Asset/RaceTrackPic/Shanghai_International_Circuit.png', 'China', 5.451),
-	(10, 'Lusail International Circuit', '/backend/Asset/RaceTrackPic/Lusail_International_Circuit.png', 'Qatar', 5.419),
-	(11, 'Circuit of The Americas', '/backend/Asset/RaceTrackPic/Circuit_of_The_Americas.png', 'United State', 5.513),
-	(12, 'Red Bull Ring', '/backend/Asset/RaceTrackPic/Red_Bull_Ring.png', 'Australia', 4.318),
-	(13, 'Circuit de Monaco', '/backend/Asset/RaceTrackPic/Circuit_de_Monaco.png', 'Monaco', 3.337),
-	(14, 'Yas Marina Circuit', '/backend/Asset/RaceTrackPic/Yas_Marina_Circuit.png', 'Abu Dhabi', 5.281),
-	(15, 'Hungaroring', '/backend/Asset/RaceTrackPic/Hungaroring.png', 'Hungary', 4.381),
-	(16, 'Circuit Gilles-Villeneuve', '/backend/Asset/RaceTrackPic/Circuit_Gilles-Villeneuve.png', 'Canada', 4.361),
-	(17, 'Suzuka Circuit', '/backend/Asset/RaceTrackPic/Suzuka_Circuit.png', 'Japan', 5.807),
-	(18, 'Las Vegas Strip Circuit', '/backend/Asset/RaceTrackPic/Las_Vegas_Strip Circuit.png', 'Las Vegas', 6.201),
-	(19, 'Autodromo Nazionale Monza', '/backend/Asset/RaceTrackPic/Autodromo_Nazionale_Monza.png', 'Italy', 5.793),
-	(20, 'Autodromo Internazionale Enzo e Dino Ferrari', '/backend/Asset/RaceTrackPic/Autodromo_Internazionale_Enzo_e_Dino_Ferrari.png', 'Emilia-Romagna', 4.909),
-	(21, 'Circuit de Spa-Francorchamps', '/backend/Asset/RaceTrackPic/Circuit_de_Spa-Francorchamps.png', 'Belgium', 7.004),
-	(22, 'Baku City Circuit', '/backend/Asset/RaceTrackPic/Baku_City_Circuit.png', 'Azerbaijan', 6.003),
-	(23, 'Silverstone Circuit', '/backend/Asset/RaceTrackPic/Silverstone_Circuit.png', 'Great Britain', 5.891),
-	(24, 'Autodromo Hermanos Rodriguez', '/backend/Asset/RaceTrackPic/Autodromo_Hermanos_Rodriguez.png', 'Mexico', 4.304);
+INSERT INTO RaceTracks(RaceTrackID, RaceTrackName, RaceTrackPic, RaceNameNational, FlagRacePic, Location, Length) VALUES
+    (1, 'Bahrain International Circuit', '/backend/Asset/RaceTrackPic/Bahrain_International_Circuit.png', 'Bahrain', '/backend/Asset/FlagPic/bahrain.png', 'Bahrain', 5.412),
+    (2, 'Albert Park Grand Prix Circuit', '/backend/Asset/RaceTrackPic/Albert_Park_Grand_Prix_Circuit.png', 'Australia', '/backend/Asset/FlagPic/australia.png', 'Australia', 5.278),
+    (3, 'Miami International Autodrome', '/backend/Asset/RaceTrackPic/Miami_International_Autodrome.png', 'United States', '/backend/Asset/FlagPic/us.png', 'United States', 5.412),
+    (4, 'Circuit Zandvoort', '/backend/Asset/RaceTrackPic/Circuit_Zandvoort.png', 'Netherlands', '/backend/Asset/FlagPic/netherlands.png', 'Netherlands', 4.259),
+    (5, 'Autodromo Jose Carlos Pace', '/backend/Asset/RaceTrackPic/Autodromo_Jose_Carlos_Pace.png', 'Brazil', '/backend/Asset/FlagPic/brazil.jpg', 'Brazil', 4.309),
+    (6, 'Circuit de Barcelona-Catalunya', '/backend/Asset/RaceTrackPic/Circuit_de_Barcelona-Catalunya.png', 'Spain', '/backend/Asset/FlagPic/spain.png', 'Spain', 4.657),
+    (7, 'Marina Bay Street Circuit', '/backend/Asset/RaceTrackPic/Marina_Bay_Street_Circuit.png', 'Singapore', '/backend/Asset/FlagPic/singapore.png', 'Singapore', 4.94),
+    (8, 'Jeddah Corniche Circuit', '/backend/Asset/RaceTrackPic/Jeddah_Corniche_Circuit.png', 'Saudi Arabia', '/backend/Asset/FlagPic/saudi_arabia.jpg', 'Saudi Arabia', 6.174),
+    (9, 'Shanghai International Circuit', '/backend/Asset/RaceTrackPic/Shanghai_International_Circuit.png', 'China', '/backend/Asset/FlagPic/china.png', 'China', 5.451),
+    (10, 'Lusail International Circuit', '/backend/Asset/RaceTrackPic/Lusail_International_Circuit.png', 'Qatar', '/backend/Asset/FlagPic/qatar.png', 'Qatar', 5.419),
+    (11, 'Circuit of The Americas', '/backend/Asset/RaceTrackPic/Circuit_of_The_Americas.png', 'United States', '/backend/Asset/FlagPic/us.png', 'United States', 5.513),
+    (12, 'Red Bull Ring', '/backend/Asset/RaceTrackPic/Red_Bull_Ring.png', 'Australia', '/backend/Asset/FlagPic/australia.png', 'Australia', 4.318),
+    (13, 'Circuit de Monaco', '/backend/Asset/RaceTrackPic/Circuit_de_Monaco.png', 'Monaco', '/backend/Asset/FlagPic/monaco.png', 'Monaco', 3.337),
+    (14, 'Yas Marina Circuit', '/backend/Asset/RaceTrackPic/Yas_Marina_Circuit.png', 'Abu Dhabi', '/backend/Asset/FlagPic/uae.jpg', 'Abu Dhabi', 5.281),
+    (15, 'Hungaroring', '/backend/Asset/RaceTrackPic/Hungaroring.png', 'Hungary', '/backend/Asset/FlagPic/hungary.png', 'Hungary', 4.381),
+    (16, 'Circuit Gilles-Villeneuve', '/backend/Asset/RaceTrackPic/Circuit_Gilles-Villeneuve.png', 'Canada', '/backend/Asset/FlagPic/canada.png', 'Canada', 4.361),
+    (17, 'Suzuka Circuit', '/backend/Asset/RaceTrackPic/Suzuka_Circuit.png', 'Japan', '/backend/Asset/FlagPic/japan.png', 'Japan', 5.807),
+    (18, 'Las Vegas Strip Circuit', '/backend/Asset/RaceTrackPic/Las_Vegas_Strip_Circuit.png', 'United States', '/backend/Asset/FlagPic/us.png', 'Las Vegas', 6.201),
+    (19, 'Autodromo Nazionale Monza', '/backend/Asset/RaceTrackPic/Autodromo_Nazionale_Monza.png', 'Italy', '/backend/Asset/FlagPic/italy.png', 'Italy', 5.793),
+    (20, 'Autodromo Internazionale Enzo e Dino Ferrari', '/backend/Asset/RaceTrackPic/Autodromo_Internazionale_Enzo_e_Dino_Ferrari.png', 'Italy', '/backend/Asset/FlagPic/italy.png', 'Emilia-Romagna', 4.909),
+    (21, 'Circuit de Spa-Francorchamps', '/backend/Asset/RaceTrackPic/Circuit_de_Spa-Francorchamps.png', 'Belgium', '/backend/Asset/FlagPic/belgium.png', 'Belgium', 7.004),
+    (22, 'Baku City Circuit', '/backend/Asset/RaceTrackPic/Baku_City_Circuit.png', 'Azerbaijan', '/backend/Asset/FlagPic/azerbaijan.png', 'Azerbaijan', 6.003),
+    (23, 'Silverstone Circuit', '/backend/Asset/RaceTrackPic/Silverstone_Circuit.png', 'Great Britain', '/backend/Asset/FlagPic/great_britain.jpg', 'Great Britain', 5.891),
+    (24, 'Autodromo Hermanos Rodriguez', '/backend/Asset/RaceTrackPic/Autodromo_Hermanos_Rodriguez.png', 'Mexico', '/backend/Asset/FlagPic/mexico.png', 'Mexico', 4.304);
 
 INSERT INTO Races(RaceID, RaceName, RaceTrackID, Date, NumberOfLaps) VALUES
 	(1, 'FORMULA 1 GULF AIR BAHRAIN GRAND PRIX 2024', 1, '2024-03-02', 57),
