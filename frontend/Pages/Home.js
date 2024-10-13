@@ -62,8 +62,10 @@ export async function renderHomePage(root) {
               <!-- Thêm itemDiv ở đây -->
           </div>
           <div class="btn">
-              <span class="passion-one-regular">VIEW FULL STANDING</span>
-              <i class="fa-solid fa-arrow-right"></i>
+              <a href="#standing">
+                <span class="passion-one-regular">VIEW FULL STANDING</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
           </div>
       </div>
     `;

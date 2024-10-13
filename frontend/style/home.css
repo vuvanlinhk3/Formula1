@@ -318,7 +318,7 @@ h2 {
 
 .btn{
     background-color: var(--primary-color);
-    width: 100%;
+    /* width: 100%; */
     max-width: 200px;
     margin-top: 20px;
     padding: 10px 15px;
