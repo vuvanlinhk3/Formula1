@@ -35,7 +35,7 @@ export function DriverCard(root) {
                         <div class="part1">
                             <div class="rank">${driver.DriverID}</div>
                             <div class="points-wrapper">
-                                <span class="score">${driver.Points}</span>
+                                <span class="score">${driver.TotalPoints}</span>
                                 <span class="pts">PTS</span>
                             </div>
                         </div>
