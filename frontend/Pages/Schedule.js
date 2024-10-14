@@ -23,17 +23,11 @@ export function renderSchedulePage(root) {
         </div>
       </div>
     </div>
-    <div class="schedule-container">    
+    <div class="schedule-containers">    
     </div>
   `
-  const fillInContent = document.querySelector(".schedule-container")
+  const fillInContent = document.querySelector(".schedule-containers")
 
-  ScheduleCard(fillInContent);
-  ScheduleCard(fillInContent);
-  ScheduleCard(fillInContent);
-  ScheduleCard(fillInContent);
-  ScheduleCard(fillInContent);
-  ScheduleCard(fillInContent);
   ScheduleCard(fillInContent);
   
   renderFooter(root);
