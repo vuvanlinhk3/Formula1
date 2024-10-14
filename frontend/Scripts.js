@@ -6,10 +6,12 @@ import { renderInfoTeamsPage } from './Pages/InforTeam.js';
 import {renderTeamsPage} from "./Pages/Teams.js";
 import { renderSchedulePage } from './Pages/Schedule.js';
 
+import { renderResultPage } from './Pages/Result.js';
+
 // Import các trang khác nếu có
 // import { renderSchedulePage } from './Pages/Schedule.js';
 // import { renderTeamsPage } from './Pages/Teams.js';
-// import { renderStandingPage } from './Pages/Standing.js';
+import { renderStandingPage } from './Pages/Standing.js';
 
 // Hàm để điều hướng giữa các trang và cập nhật tiêu đề trang
 function navigateTo(page) {
@@ -30,10 +32,10 @@ function navigateTo(page) {
     renderTeamsPage(root);
     document.title = 'Teams'; // Thay đổi tiêu đề trang
   } else if (page === 'standing') {
-    // renderStandingPage(root);
+    renderStandingPage(root);
     document.title = 'Standing'; // Thay đổi tiêu đề trang
   } else if (page === 'result') {
-    // renderResultPage(root);
+    renderResultPage(root);
     document.title = 'Result'; // Thay đổi tiêu đề trang
   }else if (page === 'inforteam') {
     // renderResultPage(root);
