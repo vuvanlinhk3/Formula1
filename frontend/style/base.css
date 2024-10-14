@@ -12,7 +12,8 @@
     --main-width: 1200px; /* Chiều rộng màn hình chính */
 
     /* Font chữ và kích thước chữ */
-    /* --base-font-size: 62.5%; 1.5rem sẽ bằng 15px (10px = 1rem), nên 62.5% = 10px */
+    --base-font-size: 62.5%; 
+    /* 1.5rem sẽ bằng 15px (10px = 1rem), nên 62.5% = 10px */
 
     /* Font chữ giống với trang web Formula 1 */
     --font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Bạn có thể thay đổi font chữ nếu cần */
