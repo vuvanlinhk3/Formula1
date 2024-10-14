@@ -11,40 +11,40 @@ export function renderResultPage(root) {
     <div class="select">
       <div class = "select-year">
         <div class = "selct-year-content">
-          <p>2024</p>
-          <p>2023</p>
-          <p>2022</p>
-          <p>2021</p>
-          <p>2020</p>
+          <p><a>2024</a></p>
+          <p><a>2023</a></p>
+          <p><a>2022</a></p>
+          <p><a>2021</a></p>
+          <p><a>2020</a></p>
         </div>
       </div>
       <div class = "select-track">
         <div class = "selct-track-content">
-          <p>All</p>
-          <p>Bahrain</p>
-          <p>Saudi Arabia</p>
-          <p>Australia</p>
-          <p>Japan</p>
-          <p>China</p>
-          <p>Miami</p>
-          <p>Emilia-Romagna</p>
-          <p>Monaco</p>
-          <p>Canada</p>
-          <p>Spain</p>
-          <p>Australia</p>
-          <p>Great Britain</p>
-          <p>Hungary</p>
-          <p>Belgium</p>
-          <p>Netherlands</p>
-          <p>Italy</p>
-          <p>Azerbaijan</p>
-          <p>Singapore</p>
-          <p>United State</p>
-          <p>Mexico</p>
-          <p>Brazil</p>
-          <p>Las Vegas</p>
-          <p>Qatar</p>
-          <p>Abu Dhabi</p>
+          <p><a>All</a></p>
+          <p><a>Bahrain</a></p>
+          <p><a>Saudi Arabia</a></p>
+          <p><a>Australia</a></p>
+          <p><a>Japan</a></p>
+          <p><a>China</a></p>
+          <p><a>Miami</a></p>
+          <p><a>Emilia-Romagna</a></p>
+          <p><a>Monaco</a></p>
+          <p><a>Canada</a></p>
+          <p><a>Spain</a></p>
+          <p><a>Australia</a></p>
+          <p><a>Great Britain</a></p>
+          <p><a>Hungary</a></p>
+          <p><a>Belgium</a></p>
+          <p><a>Netherlands</a></p>
+          <p><a>Italy</a></p>
+          <p><a>Azerbaijan</a></p>
+          <p><a>Singapore</a></p>
+          <p><a>United State</a></p>
+          <p><a>Mexico</a></p>
+          <p><a>Brazil</a></p>
+          <p><a>Las Vegas</a></p>
+          <p><a>Qatar</a></p>
+          <p><a>Abu Dhabi</a></p>
         </div>
       </div>
     </div>

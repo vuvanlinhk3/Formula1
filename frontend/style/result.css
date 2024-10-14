@@ -17,18 +17,18 @@
     overflow-y: auto; /* Kích hoạt cuộn dọc */
     scroll-behavior: smooth; /* Cuộn mượt mà */
     border: 1px solid #ccc;
-    
+    font-size: 2rem;
 }
 
-.select-track-content button {
+.select-track-content a {
     display: block;
-    font-size: 32pt;
     cursor: pointer; /* Hiển thị con trỏ tay khi di chuột qua */
     padding: 10px; /* Khoảng cách bên trong nút */
     border: none; /* Không có đường viền */
     text-align: center; /* Căn giữa chữ */
+    text-decoration: none;
 }
-.select-track-content button:hover{
+.select-track-content a:hover{
     text-decoration: underline;
 }
 
@@ -38,15 +38,16 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    width: 50%;
+    width: 50%; 
     height: 100px; /* Đặt chiều cao cố định */
     padding: 20px;
     overflow-y: auto; /* Kích hoạt cuộn dọc */
     scroll-behavior: smooth; /* Cuộn mượt mà */
     border: 1px solid #ccc;
+    font-size: 2rem;
 }
 
-.select-year-content button {
+.select-year-content a {
     display: flex;
     flex-direction: column;
     margin: 5px 0; /* Khoảng cách giữa các nút */
@@ -54,8 +55,9 @@
     padding: 10px; /* Khoảng cách bên trong nút */
     border: none; /* Không có đường viền */
     text-align: center; /* Căn giữa chữ */
+    text-decoration: none;
 }
-.select-year-content button:hover{
+.select-year-content a:hover{
     text-decoration: underline;
 }
 
