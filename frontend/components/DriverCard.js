@@ -28,7 +28,7 @@ export function DriverCard(root) {
 
                 driverData.forEach(driver => {
                     const driverCard = document.createElement('div');
-                    driverCard.classList.add('driver-card');
+                    driverCard.classList.add('driver-cardss');
 
                     // Tạo HTML cho từng thẻ tay đua
                     driverCard.innerHTML = `
