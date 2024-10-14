@@ -34,18 +34,29 @@ export function TeamCard(root) {
                   teamCard.innerHTML = `
                       <!-- Hàng 1: ID của đội -->
                       <div class="team-id-score">
-                          <span class="team-id">ID: ${team.TeamID}</span>
+                          <span class="team-id passion-one-regular">${team.TeamID}</span>
                       </div>
 
                       <!-- Hàng 2: Tên đội và logo -->
-                      <div class="team-name-logo">
+                      <div class="team-name-logo passion-one-regular">
                           <span class="team-name">${team.TeamName}</span>
                           <img src="${team.TeamPic || '/default-logo.png'}" alt="Team Logo" class="team-logo" />
                       </div>
 
                       <!-- Hàng 3: Tên các thành viên -->
-                      <div class="team-members">
-                          ${team.Members.map(member => `<span class="member-name">${member}</span>`).join('')}
+                      <div class="team-members passion-one-regular">
+                          ${team.Members.map(member => `
+                            
+                            <div class = "member-name">
+                                <span class="">
+                                    ${member.DriverName}
+                                </span>
+                                <img class ="team_driver_pic" src="${member.DriverPic}" alt = ""/>
+                            </div>
+                            
+                            
+                            
+                            `).join('')}
                       </div>
                        <!-- Hàng 4: Hình ảnh xe của team -->
                         <div class="team-car">

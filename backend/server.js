@@ -8,7 +8,7 @@ const port = 3000;
 
 // Sử dụng CORS và body-parser
 app.use(cors({
-    origin: [['http://127.0.0.1:5500', 'http://127.0.0.1:5501'],, 'http://127.0.0.1:5501']// Chỉ định nhiều nguồn mà bạn cho phép
+    origin: ['http://127.0.0.1:5500', 'http://127.0.0.1:5501'], // Chỉ định nhiều nguồn mà bạn cho phép
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
 }));
