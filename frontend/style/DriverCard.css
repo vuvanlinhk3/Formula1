@@ -1,16 +1,16 @@
-.driver-card {
+.driver-cardss {
     background-color: white;
     border-top: 2px solid black; 
     border-right: 2px solid black; /* Viền đen */
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 350px;
-    transition: background-color 0.3s;
+    width: 35rem;
+    transition: all 0.3s linear ;
     margin: 20px auto; /* Căn giữa theo chiều ngang và thêm khoảng cách 20px trên và dưới */
     padding: 20px 10px 0 0;
 }
 
-.driver-card:hover {
+.driver-cardss:hover {
     border-color: rgb(193, 19, 48); /* Đổi màu khi hover */
     transform: translateY(-10px); /* Nổi lên 10px */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Tăng độ mờ của bóng */
@@ -35,7 +35,7 @@
 }
 
 .rank {
-    font-size: 70px;
+    font-size: 5.5rem;
     color: rgb(15, 15, 15);
     font-weight: bold;
     display: flex;

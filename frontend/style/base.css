@@ -80,3 +80,10 @@ input, textarea {
     outline: none; /* Xóa bỏ viền outline khi focus */
     border: none; /* Xóa bỏ viền mặc định */
 }
+.drivers-container{
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 0 5rem;
+    flex-wrap: wrap; 
+}
