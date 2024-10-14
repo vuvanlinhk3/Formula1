@@ -1,86 +1,135 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f5f5f5;
-}
-
-.profile-container {
+.dfs{
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    max-width: 1200px;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    margin: 3rem auto;
+}
+.profile-container {
+    display: flex;
+    justify-content: space-between;
     align-items: flex-start;
+    width: 100%;
     padding: 20px;
-    background-color: white;
-    max-width: 1200px;
-    margin: 0 auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
 }
 
+/* Phần trái chứa ảnh */
 .left-section {
+    flex: 1;
+    max-width: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Ảnh chiếm toàn bộ chiều ngang nhưng giới hạn chiều dọc */
+.driver-img {
+    width: 100%;
+    height: auto;
+    max-height: 50rem;
+    object-fit: cover;
+    object-position: top;
+}
+
+/* Phần phải chứa thông tin */
+.right-section {
+    flex: 1;
+    max-width: 50%;
+    padding-left: 20px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 20px;
-}
-
-.driver-img {
-    width: 300px;
-    height: 400px;
-    border-radius: 10px;
-    object-fit: cover;
+    justify-content: flex-start;
 }
 
 .driver-name {
     display: flex;
     align-items: center;
-    margin-top: 15px;
+    margin-top: 20px;
 }
 
 .driver-rank {
-    font-size: 24px;
+    font-size: 2rem;
+    font-weight: bold;
     margin-right: 10px;
 }
 
 .country-flag {
-    width: 24px;
-    height: 16px;
+    width: 30px;
+    height: 20px;
     margin-right: 10px;
 }
 
-.right-section {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    max-width: 400px;
-}
-
-.helmet-img {
-    width: 150px;
-    height: 150px;
-    margin-bottom: 20px;
-}
-
-.merch-links {
-    margin-bottom: 20px;
-}
-
-.merch-links a {
-    color: red;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 16px;
-}
-
-.merch-links a:hover {
-    text-decoration: underline;
-}
-
-.driver-details {
-    font-size: 16px;
-    line-height: 1.8;
-}
-
 .driver-details p {
-    margin: 5px 0;
+    margin: 10px 0;
+    font-size: 1.8rem;
+    color: var(--text-des-black);
+}
+
+strong {
+    color: #000;
+}
+
+/* Làm đẹp tổng thể */
+h1 {
+    font-size: 3.5rem;
+    color: #111;
+    margin: 0;
+}
+
+p {
+    line-height: 1.6;
+}
+
+.profile-container {
+   
+
+}
+
+.right-section {
+    flex: 1;
+    max-width: 60%;
+    padding-left: 20px;
+}
+
+.driver-details p strong {
+    display: inline-block;
+    width: 200px; /* Đảm bảo nhãn mạnh chiếm một phần chiều rộng cố định */
+    color: #000;
+}
+
+/* Container của toàn bộ phần Biography */
+.biography-container {
+    margin: 20px 0;
+    padding: 2rem;
+    background-color: #f9f9f9; /* Màu nền nhẹ cho phần bio */
+    border-radius: 8px;
+}
+
+/* Định dạng cho đường kẻ ngang */
+.biography-separator {
+    border: 0;
+    height: 2px;
+    background-color: #ccc; /* Màu của đường kẻ ngang */
+    margin: 20px 0;
+}
+
+/* Phong cách cho tiêu đề Biography */
+.biography-title p {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/* Phong cách cho nội dung Biography */
+.biography-content p {
+    font-size: 1.6rem;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.5;
+    text-align: justify;
 }

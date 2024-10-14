@@ -1,6 +1,10 @@
 body{
     background-color: #f1f1f1;
 }
+.app_container_home{
+    display: flex;
+    flex-direction: column;
+}
 .container {
     display: flex;
     flex-wrap: nowrap; /* Ngăn không cho phần tử con xuống hàng */
@@ -11,24 +15,30 @@ body{
     overflow-y: hidden; /* Tắt cuộn dọc */
     -ms-overflow-style: none;  /* Ẩn thanh cuộn cho Internet Explorer và Edge */
     scrollbar-width: none;  /* Ẩn thanh cuộn cho Firefox */
+    background-color: #15151e;
+    order:1;
 }
 
 .event-card {
-    background-color: #2c2c2c;
+    /* background-color: #2c2c2c; */
     border-radius: 10px;
-    margin: 5px;
     padding: 20px;
     text-align: center;
     width: 150px;
-
+    margin: 0 5px;
     /* Flexbox để căn giữa nội dung */
     display: flex;
     justify-content: center; /* Căn giữa theo chiều ngang */
     align-items: center;     /* Căn giữa theo chiều dọc */
     flex-direction: column;  /* Sắp xếp nội dung theo chiều dọc */
     flex: 0 0 auto;          /* Ngăn việc co giãn của các thẻ */
+    border-bottom: 1px solid var(--text-description);
+    border-right: 1px solid var(--text-description);
+    transition: all .5s linear;
 }
-
+.future-schedules,.past-schedules{
+    display: flex;
+}
 .flag {
     width: 75px;
     height: auto;
@@ -47,12 +57,12 @@ body{
 }
 
 .highlight {
-    background-color: #4c4c4c;
-    width: 300px;
+    width: 400px;
+    transition: all .5s linear;
 }
 
 h2 {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     margin: 10px 0;
 }
 .outtime{
@@ -65,12 +75,15 @@ h2 {
     border-radius: 5px;
     color: white;
     cursor: pointer;
-    padding: 10px 15px;
+    /* padding: 10px 15px; */
     margin: 10px 0;
     transition: all .2s linear;
 }
 .view-schedule:hover{
-    filter: brightness(120%);
+    background-color: #fff;
+    color: var(--text-black);
+    border: 1px solid var(--primary-color);
+
 }
 .time-info {
     font-size: 1.6rem;
@@ -88,6 +101,7 @@ h2 {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    order:2;
 }
 
 .back-standing {
@@ -129,7 +143,16 @@ h2 {
     position: relative;
     background-color: white;
 }
+.top-driver:nth-child(1) {
+    order: 2; /* Đổi vị trí phần tử đầu tiên xuống dưới */
+}
 
+.top-driver:nth-child(2) {
+    order: 1; /* Đổi vị trí phần tử thứ 2 lên trên */
+}
+.top-driver:nth-child(3) {
+    order: 3; /* Đổi vị trí phần tử thứ 2 lên trên */
+}
 
 .T-driver{
     width: 300px;
@@ -137,10 +160,7 @@ h2 {
     border-bottom: 10px solid var(--primary-color);
     position: relative;
 }
-.driver-img{
-    position: relative;
-    top: 12px;
-}
+
 .infor-diver {
     background-color: var(--border-black);
     width: 100%;
@@ -173,7 +193,7 @@ h2 {
     left: 15px;
     top: 5px;
 }
-.top-driver:first-child , .top-driver:nth-child(3){
+.top-driver:nth-child(2) , .top-driver:nth-child(3){
     top: 30px;
 }
 .back-standing span {
@@ -192,7 +212,7 @@ h2 {
     display: flex;
     flex-direction: column;
     border-radius: 10px;
-    padding: 10px;
+    /* padding: 10px; */
     /* box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); */
 }
 
@@ -229,7 +249,7 @@ h2 {
     height: 20px;
     width: 5px;
     top:5px;
-    left: 15px;
+    left: 2rem;
 }
 .left-item div:first-child {
     font-weight: bold;
@@ -286,6 +306,11 @@ h2 {
 .top-list-container{
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    /* margin: 0 auto; */
+    padding: 20px 0;
+    align-items: center;
+    order: 3;
 }
 .top-list{
     max-width: var(--main-width);
@@ -293,7 +318,7 @@ h2 {
 
 .btn{
     background-color: var(--primary-color);
-    width: 100%;
+    /* width: 100%; */
     max-width: 200px;
     margin-top: 20px;
     padding: 10px 15px;

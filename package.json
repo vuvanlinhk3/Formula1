@@ -4,15 +4,21 @@
   "description": "- `<html>`: Thẻ gốc của tài liệu HTML, chứa toàn bộ nội dung trang web.\r - `<head>`: Chứa thông tin về tài liệu, bao gồm tiêu đề, meta, liên kết tới CSS, JavaScript.\r - `<title>`: Xác định tiêu đề trang web, hiển thị trên tab của trình duyệt.\r - `<meta>`: Cung cấp thông tin meta, chẳng hạn như mã hóa ký tự, mô tả trang, từ khóa.\r - `<link>`: Dùng để liên kết đến các tài nguyên bên ngoài như tệp CSS.\r - `<style>`: Chứa mã CSS để định dạng các thành phần HTML.\r - `<body>`: Chứa nội dung chính của trang web, bao gồm văn bản, hình ảnh, liên kết, v.v.\r - `<header>`: Định nghĩa phần đầu của một trang hoặc một phần của tài liệu, thường chứa tiêu đề, logo, hoặc điều hướng.\r - `<nav>`: Chứa liên kết điều hướng của trang web.\r - `<main>`: Đại diện cho nội dung chính của tài liệu.\r - `<section>`: Định nghĩa một phần hoặc một đoạn của trang web.\r - `<article>`: Đại diện cho một bài viết độc lập trong tài liệu.\r - `<footer>`: Phần cuối của trang hoặc tài liệu, thường chứa thông tin liên hệ, bản quyền.\r - `<div>`: Thẻ khối chung để chứa các nội dung khác, thường dùng để bố cục trang web.\r - `<span>`: Thẻ nội tuyến chung để định dạng văn bản hoặc nội dung nhỏ.\r - `<h1>` đến `<h6>`: Các thẻ tiêu đề từ lớn nhất (`<h1>`) đến nhỏ nhất (`<h6>`).\r - `<p>`: Đại diện cho một đoạn văn bản.\r - `<a>`: Tạo liên kết đến các trang web khác hoặc tài nguyên khác.\r - `<img>`: Hiển thị hình ảnh trên trang web.\r - `<ul>`: Tạo danh sách không thứ tự (bullet list).\r - `<ol>`: Tạo danh sách có thứ tự (numbered list).\r - `<li>`: Đại diện cho một mục trong danh sách.\r - `<form>`: Tạo biểu mẫu để thu thập dữ liệu từ người dùng.\r - `<input>`: Tạo các trường nhập liệu trong biểu mẫu.\r - `<button>`: Tạo nút có thể nhấn được.\r - `<table>`: Tạo bảng dữ liệu.\r - `<th>`, `<tr>`, `<td>`: Tạo tiêu đề bảng (`<th>`), hàng bảng (`<tr>`), và ô dữ liệu (`<td>`).",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node backend/server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.19.2"
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.0",
+    "mssql": "^11.0.1",
+    "mysql2": "^3.11.3"
   },
   "devDependencies": {
+    "concurrently": "^9.0.1",
     "file-loader": "^6.2.0"
   }
 }
