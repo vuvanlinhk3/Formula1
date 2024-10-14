@@ -49,15 +49,15 @@ export function ScheduleCard(root) {
             
             <div class="drivers">
               <div class="driver">
-                <img src="${schedule.TopDrivers[0]?.DriverPic || 'imgs/1stracer.avif'}" alt="${schedule.TopDrivers[0]?.DriverName || 'PER'}">
+                <img src="${schedule.TopDrivers[0]?.DriverPic || ''}" alt="${schedule.TopDrivers[0]?.DriverName || 'PER'}">
                 <p>${schedule.TopDrivers[0]?.DriverName || 'PER'}</p>
               </div>
               <div class="driver">
-                <img src="${schedule.TopDrivers[1]?.DriverPic || 'imgs/middleracer.avif'}" alt="${schedule.TopDrivers[1]?.DriverName || 'VER'}">
+                <img src="${schedule.TopDrivers[1]?.DriverPic || ''}" alt="${schedule.TopDrivers[1]?.DriverName || 'VER'}">
                 <p>${schedule.TopDrivers[1]?.DriverName || 'VER'}</p>
               </div>
               <div class="driver">
-                <img src="${schedule.TopDrivers[2]?.DriverPic || 'imgs/3rdracer.avif'}" alt="${schedule.TopDrivers[2]?.DriverName || 'SAI'}">
+                <img src="${schedule.TopDrivers[2]?.DriverPic || ''}" alt="${schedule.TopDrivers[2]?.DriverName || 'SAI'}">
                 <p>${schedule.TopDrivers[2]?.DriverName || 'SAI'}</p>
               </div>
             </div>
