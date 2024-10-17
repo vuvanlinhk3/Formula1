@@ -33,7 +33,7 @@ class HomeController {
 
             // Lấy thông tin tay đua từ bảng Drivers
             const driverIds = topDrivers.map(driver => driver.DriverID);
-            
+
             // Thực hiện truy vấn để lấy thông tin tay đua, tên đội, ảnh tay đua và ảnh cờ quốc tịch
             const [driverInfo] = await connection.promise().query(`
                 SELECT D.DriverID, D.DriverName, D.DriverPic, D.FlagPic, T.TeamName
@@ -47,6 +47,7 @@ class HomeController {
                 const driverData = driverInfo.find(d => d.DriverID === driver.DriverID);
                 if (driverData) {
                     return {
+                        DriverID: driverData.DriverID, // Thêm DriverID
                         position: topDrivers.indexOf(driver) + 1, // Thứ hạng
                         name: driverData.DriverName, // Tên tay đua
                         team: driverData.TeamName, // Tên đội
@@ -61,11 +62,13 @@ class HomeController {
 
             // Tạo một biến mới chỉ chứa dữ liệu 3 tay đua đứng đầu
             const top3Drivers = result.slice(0, 3).map(driver => ({
+                DriverID: driver.DriverID, // Thêm DriverID
                 name: driver.name, // Tên tay đua
                 driverImage: driver.driverImage, // Ảnh tay đua
                 position: driver.position, // Thứ hạng
                 flagImage: driver.flagImage // Ảnh cờ quốc tịch
             }));
+
 
             
 

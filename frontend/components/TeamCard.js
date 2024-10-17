@@ -1,3 +1,4 @@
+import {renderInfoTeamPageScript} from "../Scripts.js"
 async function fetchTeamData() {
   try {
       const response = await fetch('http://localhost:3000/team'); // Đường dẫn tới API để lấy dữ liệu
@@ -67,6 +68,9 @@ export function TeamCard(root) {
 
                   // Thêm thẻ team vào container
                   teamContainer.appendChild(teamCard);
+                  teamCard.addEventListener('click', () => {
+                    renderInfoTeamPageScript(team.TeamID)
+                });
               });
           } else {
               teamContainer.innerHTML = '<p>Không có dữ liệu đội đua.</p>';

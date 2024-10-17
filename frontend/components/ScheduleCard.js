@@ -5,10 +5,10 @@ async function fetchScheduleData() {
       throw new Error('Mạng lỗi khi lấy dữ liệu');
     }
     const data = await response.json(); // Chuyển đổi phản hồi thành JSON
-    return data.races; // Trả về mảng các trận đấu
+    return { racesCompleted: data.racesCompleted, racesUpcoming: data.racesUpcoming }; // Trả về mảng các trận đấu đã diễn ra và chưa diễn ra
   } catch (error) {
     console.error('Lỗi: ', error);
-    return []; // Trả về mảng rỗng nếu có lỗi
+    return { racesCompleted: [], racesUpcoming: [] }; // Trả về mảng rỗng nếu có lỗi
   }
 }
 
@@ -18,19 +18,66 @@ export function ScheduleCard(root) {
 
   async function renderSchedulePage() {
     try {
-      const scheduleData = await fetchScheduleData(); // Lấy dữ liệu từ API
-      console.log('Dữ liệu lịch trình:', scheduleData);
-      
-      // Kiểm tra xem scheduleData có phải là một mảng không
-      if (Array.isArray(scheduleData) && scheduleData.length > 0) {
-        // Xóa sạch dữ liệu hiện tại trước khi render mới
-        scheduleContainer.innerHTML = '';
+      const { racesCompleted, racesUpcoming } = await fetchScheduleData(); // Lấy dữ liệu từ API
+      console.log('Dữ liệu lịch trình:', { racesCompleted, racesUpcoming });
 
-        scheduleData.forEach(schedule => {
+      // Xóa sạch dữ liệu hiện tại trước khi render mới
+      scheduleContainer.innerHTML = '';
+
+      // Phần hiển thị lịch trình chưa diễn ra
+      if (Array.isArray(racesUpcoming) && racesUpcoming.length > 0) {
+        const upcomingSection = document.createElement('div');
+        upcomingSection.classList.add('upcoming-section');
+
+        racesUpcoming.forEach(schedule => {
           const scheduleCard = document.createElement('div');
           scheduleCard.classList.add('schedule-card');
 
-          // Tạo HTML cho từng thẻ lịch trình, theo format bạn yêu cầu
+          // Tạo HTML cho từng thẻ lịch trình
+          scheduleCard.innerHTML = `
+            <div class="schedule-header">
+              <div class="round-info">
+                  <p>ROUND ${schedule.RaceID}</p>
+                  <p>${new Date(schedule.Date).toLocaleDateString('en', { month: 'short' })}</p>
+                  <p>${new Date(schedule.Date).toLocaleDateString('en-GB')}</p> <!-- Ngày tháng năm theo định dạng dd/mm/yyyy -->
+              </div>
+              <div class="date-flag">
+                <img src="${schedule.FlagRacePic || 'imgs/flag-asset.e71627cf.png'}" alt="Flag">
+              </div>
+            </div>
+            
+            <div class="race-location">
+              <h3>${schedule.Location}</h3>
+              <p>${schedule.RaceName}</p>
+            </div>
+            
+            <div class="map-image">
+              <img src="${schedule.RaceTrackPic}" alt="${schedule.RaceName} Map"> <!-- Thay thế bằng đường dẫn thực tế đến ảnh bản đồ -->
+            </div>
+          `;
+
+          // Thêm thẻ lịch trình vào container
+          upcomingSection.appendChild(scheduleCard);
+        });
+
+        scheduleContainer.appendChild(upcomingSection);
+      } else {
+        scheduleContainer.innerHTML += '<p>Không có lịch trình chưa diễn ra.</p>';
+      }
+
+      // Thêm đường ngăn cách
+      scheduleContainer.innerHTML += '<hr>';
+
+      // Phần hiển thị lịch trình đã diễn ra
+      if (Array.isArray(racesCompleted) && racesCompleted.length > 0) {
+        const completedSection = document.createElement('div');
+        completedSection.classList.add('completed-section');
+
+        racesCompleted.forEach(schedule => {
+          const scheduleCard = document.createElement('div');
+          scheduleCard.classList.add('schedule-card');
+
+          // Tạo HTML cho từng thẻ lịch trình
           scheduleCard.innerHTML = `
             <div class="schedule-header">
               <div class="round-info">
@@ -44,31 +91,21 @@ export function ScheduleCard(root) {
             
             <div class="race-location">
               <h3>${schedule.Location}</h3>
-                <p>${schedule.RaceName}</p>
+              <p>${schedule.RaceName}</p>
             </div>
             
-            <div class="drivers">
-              <div class="driver">
-                <img src="${schedule.TopDrivers[0]?.DriverPic || ''}" alt="${schedule.TopDrivers[0]?.DriverName || 'PER'}">
-                <p>${schedule.TopDrivers[0]?.DriverName || 'PER'}</p>
-              </div>
-              <div class="driver">
-                <img src="${schedule.TopDrivers[1]?.DriverPic || ''}" alt="${schedule.TopDrivers[1]?.DriverName || 'VER'}">
-                <p>${schedule.TopDrivers[1]?.DriverName || 'VER'}</p>
-              </div>
-              <div class="driver">
-                <img src="${schedule.TopDrivers[2]?.DriverPic || ''}" alt="${schedule.TopDrivers[2]?.DriverName || 'SAI'}">
-                <p>${schedule.TopDrivers[2]?.DriverName || 'SAI'}</p>
-              </div>
+            <div class="map-image">
+              <img src="${schedule.RaceTrackPic}" alt="${schedule.RaceName} Map"> <!-- Thay thế bằng đường dẫn thực tế đến ảnh bản đồ -->
             </div>
-
           `;
 
           // Thêm thẻ lịch trình vào container
-          scheduleContainer.appendChild(scheduleCard);
+          completedSection.appendChild(scheduleCard);
         });
+
+        scheduleContainer.appendChild(completedSection);
       } else {
-        scheduleContainer.innerHTML = '<p>Không có dữ liệu lịch trình.</p>';
+        scheduleContainer.innerHTML += '<p>Không có lịch trình đã diễn ra.</p>';
       }
     } catch (error) {
       console.error('Lỗi khi render trang lịch trình:', error);

@@ -1,6 +1,7 @@
 import { renderHeader } from '../components/Header.js';
 import { renderFooter } from '../components/Footer.js';
 import { renderNavBar } from '../components/NavBar.js';
+import {renderInfoDriversPageScript} from "../Scripts.js"
 
 async function fetchHomeData() {
     try {
@@ -115,7 +116,9 @@ export async function renderHomePage(root) {
                         <img src="${closestSchedule.FlagRacePic}" alt="${closestSchedule.RaceName}" class="flag">
                         <h2>${closestSchedule.RaceNameNational} ${closestSchedule.RaceName}</h2>
                         <div class="date-highlight date">${day} ${month} - ${highlightDate.getDate()} ${month} ${highlightDate.getFullYear()}</div>
-                        <button class="view-schedule passion-one-regular">VIEW SCHEDULE</button>
+                        <button class="view-schedule passion-one-regular"><a href = "#schedule">
+                        VIEW SCHEDULE</a>
+                        </button>
                         <div class="time-info">
                             <div class="outtime">${closestSchedule.Location} <span id="event-time"></span></div> <!-- Hiển thị giờ địa điểm tổ chức -->
                             <div>Your time <span id="user-time"></span></div> <!-- Hiển thị giờ theo múi giờ của người dùng -->
@@ -196,6 +199,10 @@ export async function renderHomePage(root) {
                         <div class="number-driver passion-one-black">${item.position}</div>
                     `;
                     topDriver.appendChild(item1); // Thêm itemDiv vào topList
+                    item1.addEventListener('click', () => {
+                        renderInfoDriversPageScript(item.DriverID)
+                    });
+                    
                 });
             } 
     
@@ -220,6 +227,9 @@ export async function renderHomePage(root) {
                         </div>
                     `;
                     topList.appendChild(itemDiv); // Thêm itemDiv vào topList
+                    itemDiv.addEventListener('click', () => {
+                        renderInfoDriversPageScript(item.DriverID)
+                    });
                 });
             } else {
                 console.error('Dữ liệu từ API không phải là mảng:', homeData);

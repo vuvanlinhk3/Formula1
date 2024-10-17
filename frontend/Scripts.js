@@ -50,9 +50,17 @@ function navigateTo(page) {
     renderHomePage(root); // Trang mặc định
     document.title = 'Home';
   }
-
 }
 
+
+export function renderInfoDriversPageScript(ID) {
+  root.innerHTML = '';
+  renderInfoDriversPage(root, ID); // Truyền DriverID để lấy chi tiết tay đua
+}
+export function renderInfoTeamPageScript(ID) {
+  root.innerHTML = '';
+  renderInfoTeamsPage(root, ID); // Truyền DriverID để lấy chi tiết tay đua
+}
 // Hàm để lấy hash từ URL và chuyển đổi hash thành page
 function getPageFromHash() {
   const hash = window.location.hash || '#home'; // Mặc định là #home nếu không có hash

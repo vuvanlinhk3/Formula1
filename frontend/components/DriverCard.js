@@ -1,4 +1,4 @@
-import { renderInfoDriversPage } from '../Pages/InforDriver.js';
+import {renderInfoDriversPageScript} from "../Scripts.js"
 
 async function fetchDriverData() {
     try {
@@ -64,9 +64,7 @@ export function DriverCard(root) {
                     // Thêm thẻ driver vào container
                     driverContainer.appendChild(driverCard);
                     driverCard.addEventListener('click', () => {
-                        const root = document.getElementById('root');
-                        root.innerHTML = '';
-                        renderInfoDriversPage(root, driver.DriverID); // Truyền DriverID để lấy chi tiết tay đua
+                        renderInfoDriversPageScript(driver.DriverID)
                     });
                 });
             } else {

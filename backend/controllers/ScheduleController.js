@@ -6,49 +6,40 @@ class ScheduleController {
         try {
             connection = await sql.connectToDatabase(); // Kết nối tới cơ sở dữ liệu
 
-            // Truy vấn để lấy thông tin các trận đấu
+            // Truy vấn để lấy thông tin các trận đấu và trường đua
             const [raceData] = await connection.promise().query(`
-                SELECT R.RaceID, R.RaceName, R.Date, RT.Location, RT.FlagRacePic
+                SELECT R.RaceID, R.RaceName, R.Date, RT.Location, RT.RaceTrackPic, RT.FlagRacePic, RT.Length
                 FROM Races R
                 LEFT JOIN RaceTracks RT ON R.RaceTrackID = RT.RaceTrackID
             `);
 
             const today = new Date(); // Ngày hiện tại
 
-            // Duyệt qua từng trận đấu và xử lý dữ liệu
-            const races = await Promise.all(raceData.map(async (race) => {
-                let raceInfo = {
+            // Chia ra các trận đấu thành hai mảng: đã diễn ra và chưa diễn ra
+            const racesCompleted = [];
+            const racesUpcoming = [];
+
+            raceData.forEach(race => {
+                const raceInfo = {
                     RaceID: race.RaceID,
                     RaceName: race.RaceName,
                     Date: race.Date,
                     Location: race.Location,
-                    FlagRacePic: race.FlagRacePic,
-                    TopDrivers: [] // Sẽ chứa thông tin top 3 tay đua nếu trận đấu đã diễn ra
+                    RaceTrackPic: race.RaceTrackPic, // Thêm ảnh trường đua
+                    FlagRacePic: race.FlagRacePic, // Thêm cờ quốc gia
+                    Length: race.Length, // Thêm chiều dài trường đua
                 };
 
-                // Kiểm tra xem trận đấu đã diễn ra hay chưa
+                // Phân loại trận đấu dựa trên ngày
                 if (new Date(race.Date) < today) {
-                    // Trận đấu đã diễn ra, lấy thông tin top 3 tay đua
-                    const [topDrivers] = await connection.promise().query(`
-                        SELECT D.DriverName, D.DriverPic
-                        FROM DetailResult DR
-                        LEFT JOIN Drivers D ON DR.DriverID = D.DriverID
-                        WHERE DR.RaceID = ?
-                        ORDER BY DR.Position ASC
-                        LIMIT 3
-                    `, [race.RaceID]);
-
-                    raceInfo.TopDrivers = topDrivers.map(driver => ({
-                        DriverName: driver.DriverName,
-                        DriverPic: driver.DriverPic
-                    }));
+                    racesCompleted.push(raceInfo); // Trận đấu đã diễn ra
+                } else {
+                    racesUpcoming.push(raceInfo); // Trận đấu chưa diễn ra
                 }
-
-                return raceInfo;
-            }));
+            });
 
             // Trả dữ liệu dưới dạng JSON
-            res.json({ races });
+            res.json({ racesCompleted, racesUpcoming });
         } catch (err) {
             console.error('Lỗi khi lấy dữ liệu lịch trình trận đấu: ', err);
             res.status(500).send('Lỗi khi lấy dữ liệu lịch trình trận đấu');
