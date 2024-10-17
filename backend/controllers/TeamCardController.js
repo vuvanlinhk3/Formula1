@@ -40,7 +40,7 @@ class TeamCardController {
             });
 
             // In ra danh sách các đội và thành viên để kiểm tra
-            console.log('Danh sách đội và thành viên:', teams);
+            // console.log('Danh sách đội và thành viên:', teams);
 
             // Trả dữ liệu dưới dạng JSON
             res.json({ teams });

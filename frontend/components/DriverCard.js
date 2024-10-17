@@ -1,3 +1,5 @@
+import { renderInfoDriversPage } from '../Pages/InforDriver.js';
+
 async function fetchDriverData() {
     try {
         const response = await fetch('http://localhost:3000/drivers'); // Đường dẫn tới API để lấy dữ liệu
@@ -19,7 +21,7 @@ export function DriverCard(root) {
     async function renderDriverPage() {
         try {
             const driverData = await fetchDriverData(); // Lấy dữ liệu từ API
-            console.log("Dữ liệu tay đua:", driverData);
+            // console.log("Dữ liệu tay đua:", driverData);
             
             // Kiểm tra xem driverData có phải là một mảng không
             if (Array.isArray(driverData) && driverData.length > 0) {
@@ -61,6 +63,11 @@ export function DriverCard(root) {
 
                     // Thêm thẻ driver vào container
                     driverContainer.appendChild(driverCard);
+                    driverCard.addEventListener('click', () => {
+                        const root = document.getElementById('root');
+                        root.innerHTML = '';
+                        renderInfoDriversPage(root, driver.DriverID); // Truyền DriverID để lấy chi tiết tay đua
+                    });
                 });
             } else {
                 driverContainer.innerHTML = '<p>Không có dữ liệu tay đua.</p>';
