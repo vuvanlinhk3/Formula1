@@ -1,6 +1,11 @@
 .standing-page-container{
     background-color: rgb(246, 241, 238);
-    margin: 20px 100px 20px 100px;
+    /* margin: 20px 100px 20px 100px; */
+    max-width: var(--main-width);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
 }
 
 .driver-standing {

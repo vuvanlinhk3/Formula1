@@ -15,7 +15,7 @@ class DriverController {
             `);
 
             // In ra driverData để kiểm tra dữ liệu lấy từ DB
-            console.log('Dữ liệu tay đua:', driverData);
+            // console.log('Dữ liệu tay đua:', driverData);
 
             // Lấy tổng điểm cho từng tay đua
             const totalPoints = await SumPoint.calculateTotalPoints(); // Giả sử trả về dạng [{DriverID, total_points}, ...]
@@ -38,7 +38,7 @@ class DriverController {
             }));
 
             // In ra danh sách tay đua để kiểm tra
-            console.log('Danh sách tay đua:', drivers);
+            // console.log('Danh sách tay đua:', drivers);
 
             // Trả dữ liệu dưới dạng JSON
             res.json({ drivers });

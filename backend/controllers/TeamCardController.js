@@ -6,9 +6,9 @@ class TeamCardController {
         try {
             connection = await sql.connectToDatabase(); // Kết nối tới cơ sở dữ liệu
 
-            // Truy vấn để lấy thông tin các đội và thành viên của họ
+            // Truy vấn để lấy thông tin các đội và thành viên của họ, bao gồm cả ảnh của tay đua
             const [teamData] = await connection.promise().query(`
-                SELECT T.TeamID, T.TeamName, T.TeamPic, D.DriverName
+                SELECT T.TeamID, T.TeamName, T.TeamPic, D.DriverName, D.DriverPic
                 FROM Teams T
                 LEFT JOIN Drivers D ON T.TeamID = D.TeamID
             `);
@@ -30,14 +30,17 @@ class TeamCardController {
                     teams.push(team);
                 }
 
-                // Nếu có thành viên (tay đua), thêm vào danh sách thành viên
-                if (row.DriverName) {
-                    team.Members.push(row.DriverName);
+                // Nếu có thành viên (tay đua), thêm vào danh sách thành viên với cả tên và ảnh
+                if (row.DriverName && row.DriverPic) {
+                    team.Members.push({
+                        DriverName: row.DriverName, // Tên tay đua
+                        DriverPic: row.DriverPic // Ảnh tay đua
+                    });
                 }
             });
 
-            // In ra danh sách các đội để kiểm tra
-            console.log('Danh sách đội và thành viên:', teams);
+            // In ra danh sách các đội và thành viên để kiểm tra
+            // console.log('Danh sách đội và thành viên:', teams);
 
             // Trả dữ liệu dưới dạng JSON
             res.json({ teams });
