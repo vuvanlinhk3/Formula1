@@ -54,7 +54,7 @@ class InforDriverController {
                 }
             };
 
-            console.log('Dữ liệu tay đua inforr được trả về:', driver); // Log dữ liệu tay đua trước khi trả về
+            // console.log('Dữ liệu tay đua inforr được trả về:', driver); // Log dữ liệu tay đua trước khi trả về
 
             // Trả dữ liệu chi tiết tay đua cùng với thông tin đội dưới dạng JSON
             res.json({ driver });

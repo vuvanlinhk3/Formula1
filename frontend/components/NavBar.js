@@ -1,10 +1,10 @@
 export function renderNavBar(root) {
-    const navbar = document.createElement('Navbar');
+    const navbar = document.createElement('nav'); // Sửa đổi từ 'Navbar' thành 'nav'
     navbar.innerHTML = `
         <nav class="navbar">
-            <div class = "navmain">
+            <div class="navmain">
                 <div class="logo">
-                    <a href = "#home" >
+                    <a href="#home">
                         <img src="/frontend/Assets/logo/f1_logo.png" alt="Logo">
                     </a>
                 </div>

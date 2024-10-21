@@ -73,7 +73,7 @@ class HomeController {
             
 
             // Kết quả
-            console.log('Kết quả:', {schedules, topDrivers: result, top3Drivers });
+            // console.log('Kết quả:', {schedules, topDrivers: result, top3Drivers });
             res.json({ topDrivers: result, top3Drivers, schedules }); // Trả dữ liệu dưới dạng JSON
         } catch (err) {
             console.error('Lỗi khi lấy dữ liệu ở home: ', err);

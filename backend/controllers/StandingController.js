@@ -40,7 +40,7 @@ class StandingController {
             });
 
             // In ra standings để kiểm tra
-            console.log('Standings:', standings);
+            // console.log('Standings:', standings);
 
             // Trả dữ liệu dưới dạng JSON
             res.json({ standings });

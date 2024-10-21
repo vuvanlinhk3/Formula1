@@ -2,138 +2,197 @@ import { renderHeader } from '../components/Header.js';
 import { renderFooter } from '../components/Footer.js';
 import { renderNavBar } from '../components/NavBar.js';
 
+// Hàm để lấy dữ liệu kết quả từ API
+async function fetchResultData(trackId) {
+    try {
+        const response = await fetch(`http://localhost:3000/results/${trackId}`); // Đường dẫn tới API để lấy dữ liệu kết quả
+        if (!response.ok) {
+            throw new Error('Mạng lỗi khi lấy dữ liệu');
+        }
+        const data = await response.json(); // Chuyển đổi phản hồi thành JSON
+        return data; // Trả về mảng kết quả
+    } catch (error) {
+        console.error('Lỗi: ', error);
+        return []; // Trả về mảng rỗng nếu có lỗi
+    }
+}
+
+
+
 export function renderResultPage(root) {
-  renderHeader(root);
-  renderNavBar(root);
-  const resultContent = document.createElement('div');
-  resultContent.innerHTML = `
-  <div class= "result-container">
-    <div class="select">
-      <div class = "select-year">
-        <div class = "selct-year-content">
-          <p><a>2024</a></p>
-          <p><a>2023</a></p>
-          <p><a>2022</a></p>
-          <p><a>2021</a></p>
-          <p><a>2020</a></p>
+    renderHeader(root);
+    renderNavBar(root);
+    
+    const resultContent = document.createElement('div');
+    resultContent.innerHTML = `
+        <div class="result-container">
+            <div class="select">
+                <div class="select-track">
+                    <label for="track">Select Racetrack:</label>
+                    <select id="track" class="select-box" name="track">
+                        <option value="all">All</option>
+                        <option value="1">Bahrain</option>
+                        <option value="2">Saudi Arabia</option>
+                        <option value="3">Australia</option>
+                        <option value="4">Japan</option>
+                        <option value="5">China</option>
+                        <option value="6">Miami</option>
+                        <option value="7">Emilia-Romagna</option>
+                        <option value="8">Monaco</option>
+                        <option value="9">Canada</option>
+                        <option value="10">Spain</option>
+                        <option value="11">Australia</option>
+                        <option value="12">Great Britain</option>
+                        <option value="13">Hungary</option>
+                        <option value="14">Belgium</option>
+                        <option value="15">Netherlands</option>
+                        <option value="16">Italy</option>
+                        <option value="17">Azerbaijan</option>
+                        <option value="18">Singapore</option>
+                        <option value="19">United States</option>
+                        <option value="20">Mexico</option>
+                        <option value="21">Brazil</option>
+                        <option value="22">Las Vegas</option>
+                        <option value="23">Qatar</option>
+                        <option value="24">Abu Dhabi</option>
+                    </select>
+                </div>
+            </div>
+            <div class="title">
+                <h1>2024 Race Result</h1>
+            </div>
+            <table class="detail-result" id="detail-result">
+                <!-- bảng ở đây -->
+            </table>
         </div>
-      </div>
-      <div class = "select-track">
-        <div class = "selct-track-content">
-          <p><a>All</a></p>
-          <p><a>Bahrain</a></p>
-          <p><a>Saudi Arabia</a></p>
-          <p><a>Australia</a></p>
-          <p><a>Japan</a></p>
-          <p><a>China</a></p>
-          <p><a>Miami</a></p>
-          <p><a>Emilia-Romagna</a></p>
-          <p><a>Monaco</a></p>
-          <p><a>Canada</a></p>
-          <p><a>Spain</a></p>
-          <p><a>Australia</a></p>
-          <p><a>Great Britain</a></p>
-          <p><a>Hungary</a></p>
-          <p><a>Belgium</a></p>
-          <p><a>Netherlands</a></p>
-          <p><a>Italy</a></p>
-          <p><a>Azerbaijan</a></p>
-          <p><a>Singapore</a></p>
-          <p><a>United State</a></p>
-          <p><a>Mexico</a></p>
-          <p><a>Brazil</a></p>
-          <p><a>Las Vegas</a></p>
-          <p><a>Qatar</a></p>
-          <p><a>Abu Dhabi</a></p>
-        </div>
-      </div>
-    </div>
-    <div class = "title">
-    <h1>2024 Race Result</h1>
-    </div>
-    <table class="detail-result">
-      <thead>
-        <tr>
-            <th>Grand Prix</th>
-            <th>Date</th>
-            <th>Winner</th>
-            <th>Car</th>
-            <th>Laps Completed</th>
-            <th>Time</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Barrain</td>
-          <td>02 Mar 2024</td>
-          <td>Max Verstappen</td>
-          <td>Red Bull Racing Honda RBPT</td>
-          <td>57</td>
-          <td>1:31:44.742</td>
-        </tr>
-        <tr>
-          <td>Barrain</td>
-          <td>02 Mar 2024</td>
-          <td>Max Verstappen</td>
-          <td>Red Bull Racing Honda RBPT</td>
-          <td>57</td>
-          <td>1:31:44.742</td>
-        </tr>
-        <tr>
-          <td>Barrain</td>
-          <td>02 Mar 2024</td>
-          <td>Max Verstappen</td>
-          <td>Red Bull Racing Honda RBPT</td>
-          <td>57</td>
-          <td>1:31:44.742</td>
-        </tr>
-        <tr>
-          <td>Barrain</td>
-          <td>02 Mar 2024</td>
-          <td>Max Verstappen</td>
-          <td>Red Bull Racing Honda RBPT</td>
-          <td>57</td>
-          <td>1:31:44.742</td>
-        </tr>
-        <tr>
-          <td>Barrain</td>
-          <td>02 Mar 2024</td>
-          <td>Max Verstappen</td>
-          <td>Red Bull Racing Honda RBPT</td>
-          <td>57</td>
-          <td>1:31:44.742</td>
-        </tr>
-        <tr>
-          <td>Barrain</td>
-          <td>02 Mar 2024</td>
-          <td>Max Verstappen</td>
-          <td>Red Bull Racing Honda RBPT</td>
-          <td>57</td>
-          <td>1:31:44.742</td>
-        </tr>
-        <tr>
-          <td>Barrain</td>
-          <td>02 Mar 2024</td>
-          <td>Max Verstappen</td>
-          <td>Red Bull Racing Honda RBPT</td>
-          <td>57</td>
-          <td>1:31:44.742</td>
-        </tr>
-        <tr>
-          <td>Barrain</td>
-          <td>02 Mar 2024</td>
-          <td>Max Verstappen</td>
-          <td>Red Bull Racing Honda RBPT</td>
-          <td>57</td>
-          <td>1:31:44.742</td>
-        </tr>
-      </tbody>
-    <table>
-  <div>
-  `;
-  root.appendChild(resultContent);
+    `;
+    
+    root.appendChild(resultContent);
+    renderFooter(root);
 
-  renderFooter(root);
+    // Lắng nghe sự kiện change trên select box
+    const trackSelect = document.getElementById('track');
+    trackSelect.addEventListener('change', (event) => {
+        const selectedValue = event.target.value; // Lấy giá trị đã chọn
+        console.log(selectedValue)
+        fetchAndRenderFilteredResults(selectedValue)
+        if(selectedValue == "all"){
+            renderResults();
+        }
+    });
+
+    // Hàm để render dữ liệu kết quả từ API vào bảng
+    async function renderResults() {
+        try {
+            const resultsData = await fetchResultData("all"); // Lấy dữ liệu từ API
+            const driverResults = resultsData.topResults;
+            console.log(driverResults)
+            const detailResult = document.getElementById('detail-result');
+            detailResult.innerHTML = `
+                <thead>
+                    <tr>
+                        <th>Grand Prix</th>
+                        <th>Date</th>
+                        <th>Winner</th>
+                        <th>Team</th>
+                        <th>Laps Completed</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody id="result-table-body">
+                    <tr>
+                        <td colspan="6">Loading data...</td> <!-- Hiển thị khi đang tải dữ liệu -->
+                    </tr>
+                </tbody>
+            `;
+            const tableBody = document.getElementById('result-table-body');
+
+            // Xóa nội dung cũ trước khi render mới
+            tableBody.innerHTML = '';
+            
+            if (Array.isArray(driverResults) && driverResults.length > 0) {
+                // Lặp qua dữ liệu kết quả và render ra bảng
+                driverResults.forEach(result => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${result.RaceName}</td>
+                        <td>${new Date(result.Date).toLocaleDateString()}</td>
+                        <td>${result.DriverName}</td>
+                        <td>${result.TeamName}</td>
+                        <td>${result.LapsCompleted}</td>
+                        <td>${result.TimeOrRetired}</td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            } else {
+                tableBody.innerHTML = '<tr><td colspan="6">Không có dữ liệu.</td></tr>';
+            }
+        } catch (error) {
+            console.error('Lỗi khi render kết quả:', error);
+            const tableBody = document.getElementById('result-table-body');
+            tableBody.innerHTML = '<tr><td colspan="6">Đã xảy ra lỗi khi tải dữ liệu.</td></tr>';
+        }
+    }
 
 
+
+
+    async function fetchAndRenderFilteredResults(trackId) {
+        try {
+            const filteredData = await fetchResultData(trackId); // Lấy dữ liệu với trackId từ API
+            const driverResults = filteredData.driverResults;
+            console.log(driverResults)
+            // Thiết lập lại bảng với cấu trúc chi tiết kết quả đua
+            const detailResult2 = document.getElementById('detail-result');
+            detailResult2.innerHTML = `
+                <thead>
+                    <tr>
+                        <th>Pos</th>
+                        <th>No.</th>
+                        <th>Driver</th>
+                        <th>Team</th>
+                        <th>Laps Completed</th>
+                        <th>Time</th>
+                        <th>Points</th>
+                    </tr>
+                </thead>
+                <tbody id="result-table-body">
+                    <tr>
+                        <td colspan="8">Loading data...</td> <!-- Hiển thị khi đang tải dữ liệu -->
+                    </tr>
+                </tbody>
+            `;
+            const tableBody2 = document.getElementById('result-table-body');
+            tableBody2.innerHTML=``;
+            if (Array.isArray(driverResults) && driverResults.length > 0) {
+                // Lặp qua dữ liệu và render ra bảng
+                driverResults.forEach(result => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${result.Position}</td> <!-- Vị trí của tay đua -->
+                        <td>${result.DriverID}</td> <!-- Mã số tay đua -->
+                        <td>${result.DriverName}</td> <!-- Tên tay đua -->
+                        <td>${result.TeamName}</td> <!-- Tên đội đua -->
+                        <td>${result.LapsCompleted}</td> <!-- Số vòng hoàn thành -->
+                        <td>${result.TimeOrRetired}</td> <!-- Thời gian hoặc trạng thái dừng -->
+                        <td>${result.TotalPoints}</td> <!-- Điểm số trong cuộc đua -->
+                    `;
+                    tableBody2.appendChild(row);
+                });
+            } else {
+                tableBody2.innerHTML = '<tr><td colspan="8">Không có dữ liệu cho trường đua này.</td></tr>';
+            }
+        } catch (error) {
+            console.error('Lỗi khi render kết quả lọc:', error);
+            const tableBody2 = document.getElementById('result-table-body');
+            tableBody2.innerHTML = '<tr><td colspan="8">Đã xảy ra lỗi khi tải dữ liệu.</td></tr>';
+        }
+    }
+    
+
+
+
+
+    // Gọi hàm để render kết quả sau khi trang được tải
+    renderResults();
 }

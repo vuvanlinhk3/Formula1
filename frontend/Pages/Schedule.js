@@ -18,8 +18,8 @@ export function renderSchedulePage(root) {
       </div>
       <div class="action-buttons">
         <div class="next-round">
-          <p class="round-text">NEXT ROUND 19</p>
-          <p class="location">UNITED STATES 2024</p>
+          <p class="round-text">ROUND F1</p>
+          <p class="location">SCHEDULE 2024</p>
         </div>
       </div>
     </div>

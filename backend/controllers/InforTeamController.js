@@ -50,7 +50,7 @@ class InforTeamController {
                 })).filter(driver => driver.DriverID) // Lọc các tay đua không có thông tin
             };
 
-            console.log('Dữ liệu đội đua được trả về:', team); // Log dữ liệu đội trước khi trả về
+            // console.log('Dữ liệu đội đua được trả về:', team); // Log dữ liệu đội trước khi trả về
 
             // Trả dữ liệu chi tiết đội đua dưới dạng JSON
             res.json({ team });

@@ -8,6 +8,9 @@ const ScheduleController = require("./controllers/ScheduleController.js")
 const StandingController = require("./controllers/StandingController.js")
 const InforDriverController = require("./controllers/InforDriverController.js")
 const InforTeamController = require("./controllers/InforTeamController.js")
+const ResultController = require("./controllers/ResultController.js")
+// const InforResultController = require("./controllers/InforResuilt.js")
+
 // Định nghĩa route để lấy dữ liệu từ HomeController
 router.get('/home', HomeController.getHomeData);
 router.get('/team', TeamCardController.getTeamData);
@@ -16,5 +19,8 @@ router.get('/schedule', ScheduleController.getSchedule);
 router.get('/standings', StandingController.getStandings);
 router.get('/driver/:id', InforDriverController.getDriverInfo);
 router.get('/teams/:id', InforTeamController.getTeamInfo);
+router.get('/results/:id', ResultController.getTopResults);
+// router.get('/results/:id', InforResultController.getInforResults);
+
 
 module.exports = router;
