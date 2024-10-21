@@ -38,7 +38,7 @@ class DriverController {
             }));
 
             // In ra danh sách tay đua để kiểm tra
-            // console.log('Danh sách tay đua:', drivers);
+            console.log('Danh sách tay đua:', drivers);
 
             // Trả dữ liệu dưới dạng JSON
             res.json({ drivers });
