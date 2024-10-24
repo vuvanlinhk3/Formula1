@@ -175,7 +175,7 @@ export function renderResultPage(root) {
                         <td>${result.TeamName}</td> <!-- Tên đội đua -->
                         <td>${result.LapsCompleted}</td> <!-- Số vòng hoàn thành -->
                         <td>${result.TimeOrRetired}</td> <!-- Thời gian hoặc trạng thái dừng -->
-                        <td>${result.TotalPoints}</td> <!-- Điểm số trong cuộc đua -->
+                        <td>${result.Points}</td> <!-- Điểm số trong cuộc đua -->
                     `;
                     tableBody2.appendChild(row);
                 });
